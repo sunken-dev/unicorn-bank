@@ -11,6 +11,7 @@ function authenticate() {
 }
 
 
+/// obsf. below here
 function readUrlParameters(parameterName)
 {
     var requestUri = window.location.search.substring(1);
@@ -63,4 +64,8 @@ function addTransaction(name, tags, value, date) {
         '</div>' +
         '</div>';
     transactions.appendChild(trx);
+}
+
+function enableAdminMode() {
+
 }
