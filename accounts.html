@@ -16,8 +16,44 @@
 <body
         class="bg-cover bg-center h-screen w-screen"
         style="background-image: url(https://images.unsplash.com/photo-1435575653489-b0873ec954e2?fm=jpg&blur=35&q=80&w=1920&sat=-50&gam=-20)">
+
+<div class="flex min-h-full flex-col">
+
+    <div class="border-b border-gray-200 bg-white px-4 py-5 sm:px-6">
+        <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
+            <div class="ml-4 mt-2">
+                <h3 class="text-lg font-medium leading-6 text-gray-900">Create Transaction</h3>
+            </div>
+            <div class="ml-4 mt-2 flex-shrink-0">
+                <button type="button"
+                        class="relative inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    Create new job
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="pb-24 sm:px-6 lg:px-8">
+        <div class="flex min-h-full flex-col justify-center px-80 pb-96">
+            <div class="overflow-hidden bg-white shadow sm:rounded-md">
+                <ul id="transactions" role="list" class="divide-y divide-gray-200">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script>
-console.log(readUrlParameters("username"))
+    console.log(readUrlParameters("username"));
+    addTransaction("Netflix", "Entertainment", "- 25,99 €", "Feburary 5, 2023");
+    addTransaction("Gehalt", "Income", "+ 3.741,57 €", "Feburary 7, 2023");
+    addTransaction("Mediamarkt", "Shopping", "- 512,34 €", "Feburary 7, 2023");
+    addTransaction("Rewe Group", "Groceries", "- 43,21 €", "Feburary 7, 2023");
+    addTransaction("Holmes", "Health", "- 79,99 €", "Feburary 7, 2023");
+    addTransaction("UBER RECIPT", "Transportation", "- 29,13 €", "Feburary 7, 2023");
+    addTransaction("Moneyback", "blub", "+ 23,00 €", "Feburary 7, 2023");
 </script>
 </body>
 </html>
