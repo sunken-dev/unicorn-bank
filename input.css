@@ -3,3 +3,53 @@
 @tailwind utilities;
 
 
+* {
+    font-family: "Inter", sans-serif;
+}
+
+
+.background {
+    @apply bg-cover bg-center h-screen w-screen;
+    background-image: url(https://images.unsplash.com/photo-1435575653489-b0873ec954e2?fm=jpg&blur=35&q=80&w=1920&sat=-50&gam=-20);
+}
+
+.login-box {
+    @apply flex min-h-full flex-col justify-center pb-24;
+}
+
+.login-box-inner {
+    @apply bg-white py-8 px-4 shadow bg-opacity-75;
+}
+
+.login-box-mobile-wrapper {
+    @apply bg-white py-8 px-4 shadow bg-opacity-75;
+}
+
+.login-bank-header {
+    @apply mt-6 mb-6 sm:mx-auto text-center text-3xl w-3/5 font-bold tracking-tight text-gray-900;
+}
+
+.login-input {
+    @apply block text-sm font-medium text-gray-700;
+}
+
+.sign-in {
+    @apply flex w-full justify-center rounded-md border border-transparent bg-indigo-800 py-2 px-4 text-sm font-medium text-white shadow-sm
+}
+
+.sign-in:focus {
+    @apply focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
+}
+
+.sign-in:hover {
+    @apply hover:bg-indigo-600
+}
+
+.sign-in:disabled {
+    @apply bg-slate-100 text-slate-400 border-slate-300 shadow-none cursor-not-allowed
+}
+
+.sign-in:disabled:after {
+    margin-left: 0.3rem;
+    content: " (disabled)";
+}
