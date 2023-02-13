@@ -6,5 +6,10 @@ function authenticate() {
     if (username === "TestUser" && password === "!a@s#d$f") {
         window.location.assign(window.atob('Li9hY2NvdW50cy5odG1sP2FkbWluPWZhbHNl'));
     }
+    toggleModal('sign-in-error');
     return false;
+}
+
+function toggleModal(modalID) {
+    document.getElementById(modalID).toggleAttribute("hidden")
 }
