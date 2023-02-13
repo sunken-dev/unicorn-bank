@@ -7,30 +7,28 @@
     <style>@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");</style>
     <script type="application/javascript" src="functions.js"></script>
 </head>
-<body class="bg-cover bg-center h-screen w-screen">
+<body class="background">
 
-<div class="flex min-h-full flex-col">
+<div class="account-bounding-box">
 
-    <div class="border-b border-gray-200 bg-white bg-opacity-30 px-4 py-5 sm:px-6" hidden="${}">
-        <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
-            <div class="ml-4 mt-2">
-                <h3 class="text-lg font-medium leading-6 text-gray-900">Create Transaction</h3>
+    <div class="account-section-transaction-header" hidden="${}">
+        <div class="account-section-transaction-create-1">
+            <div class="account-section-transaction-create-2">
+                <h3 class="account-section-transaction-create-3">Create Transaction</h3>
             </div>
-            <div class="ml-4 mt-2 flex-shrink-0">
+            <div class="account-section-transaction-create-4">
                 <button type="button"
-                        class="relative inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                        class="account-section-transaction-create-4-btn">
                     Create new job
                 </button>
             </div>
         </div>
     </div>
 
-    <div class="pb-24 sm:px-6 lg:px-8">
-        <div class="flex min-h-full flex-col justify-center px-80 pb-96">
-            <div class="overflow-hidden bg-white shadow sm:rounded-md">
-                <ul id="transactions" role="list" class="divide-y divide-gray-200">
-
-                </ul>
+    <div class="account-section-transactions">
+        <div class="account-section-transactions-box">
+            <div class="account-section-transactions-list">
+                <ul id="transactions" role="list" class="account-section-transactions-list-ul"></ul>
             </div>
         </div>
     </div>

@@ -16,28 +16,26 @@ function readUrlParameters(parameterName)
 function addTransaction(name, tags, value, date) {
     var transactions = document.getElementById("transactions");
     var trx = document.createElement("li");
-    var valueFg, valueBg;
+    var valueFg;
     if (value.startsWith("-")) {
-        valueFg = "text-red-800";
-        valueBg = "bg-red-100"
+        valueFg = "account-transaction-negative";
     } else {
-        valueFg = "text-green-800";
-        valueBg = "bg-green-100";
+        valueFg = "account-transaction-positive";
     }
-    trx.innerHTML = '<div class="px-4 py-2 sm:px-6">' +
-        '<div class="flex items-center justify-between">' +
-        `<p class="text-sm font-medium text-indigo-600 px">${name}</p>` +
-        `<p class="inline-flex rounded-full ${valueBg} px-2 text-xs font-semibold leading-5 ${valueFg}">${value}</p>` +
+    trx.innerHTML = '<div class="account-transaction-1">' +
+        '<div class="account-transaction-2">' +
+        `<p class="account-transaction-3">${name}</p>` +
+        `<p class="account-transaction-4 ${valueFg}">${value}</p>` +
         '</div>' +
-        '<div class="mt-2 sm:flex sm:justify-between">' +
-        '<div class="sm:flex">' +
-        '<p class="flex items-center text-sm text-gray-500 bg-gray-100 border-gray-900 border border-dotted rounded-md px-2">' +
+        '<div class="account-transaction-5">' +
+        '<div class="account-transaction-6">' +
+        '<p class="account-transaction-7">' +
         `${tags}` +
         '</p>' +
         '</div>' +
-        '<div class="mt-2 flex text-sm text-gray-500 sm:mt-0">' +
+        '<div class="account-transaction-8">' +
         '<!-- Heroicon name: mini/calendar -->' +
-        '<svg class="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400"' +
+        '<svg class="account-transaction-9"' +
         '     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"' +
         '     aria-hidden="true">' +
         '     <path fill-rule="evenodd"' +
