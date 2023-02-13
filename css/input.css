@@ -277,7 +277,7 @@
     @apply inline-flex w-full justify-center rounded-md border border-transparent px-4 py-2 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-sm;
 }
 .modal-button-error {
-    @apply modal-button bg-red-600 hover:bg-red-700 focus:ring-red-500;
+    @apply modal-button text-white bg-red-600 hover:bg-red-700 focus:ring-red-500;
 }
 .modal-button-transfer {
     @apply modal-button bg-indigo-700 hover:bg-indigo-500 focus:ring-indigo-500 text-gray-100;
