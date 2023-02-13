@@ -11,6 +11,7 @@
     src: url('../fonts/inter-ext.woff') format('woff');
     unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 /* latin */
 @font-face {
     font-family: 'Inter';
@@ -62,6 +63,7 @@
 .login-input-control {
     @apply block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm sm:text-sm;
 }
+
 .login-input-control:focus {
     @apply border-indigo-500 outline-none ring-indigo-500;
 }
@@ -73,16 +75,20 @@
 .login-submit {
     @apply flex w-full justify-center rounded-md border border-transparent bg-indigo-800 py-2 px-4 text-sm font-medium text-white shadow-sm;
 }
+
 .login-submit:disabled {
     @apply bg-slate-100 text-slate-400 border-slate-300 shadow-none cursor-not-allowed;
 }
+
 .login-submit:disabled:after {
     margin-left: 0.3rem;
     content: " (disabled)";
 }
+
 .login-submit:focus {
     @apply focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
 }
+
 .login-submit:enabled:hover {
     @apply hover:bg-indigo-500;
 }
@@ -94,24 +100,31 @@
 .account-section-transaction-header {
     @apply border-b border-gray-200 bg-white bg-opacity-30 px-4 py-5 sm:px-6;
 }
+
 .account-section-transaction-create-1 {
     @apply ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap;
 }
+
 .account-section-transaction-create-2 {
     @apply ml-4 mt-2;
 }
+
 .account-section-transaction-create-3 {
     @apply text-lg font-medium leading-6 text-gray-900;
 }
+
 .account-section-transaction-create-4 {
     @apply ml-4 mt-2 flex-shrink-0;
 }
+
 .account-section-transaction-create-4-btn {
     @apply relative inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm;
 }
+
 .account-section-transaction-create-4-btn:hover {
     @apply hover:bg-indigo-700;
 }
+
 .account-section-transaction-create-4-btn:focus {
     @apply outline-none ring-2 ring-indigo-500 ring-offset-2;
 }
@@ -135,6 +148,7 @@
 .account-transaction-negative {
     @apply text-red-800 bg-red-100;
 }
+
 .account-transaction-positive {
     @apply text-green-800 bg-green-100;
 }
@@ -142,27 +156,35 @@
 .account-transaction-1 {
     @apply px-4 py-2 sm:px-6;
 }
+
 .account-transaction-2 {
     @apply flex items-center justify-between;
 }
+
 .account-transaction-3 {
     @apply text-sm font-medium text-indigo-600 px-0;
 }
+
 .account-transaction-4 {
     @apply inline-flex rounded-full px-2 text-xs font-semibold leading-5;
 }
+
 .account-transaction-5 {
     @apply mt-2 sm:flex sm:justify-between;
 }
+
 .account-transaction-6 {
     @apply sm:flex;
 }
+
 .account-transaction-7 {
     @apply flex items-center text-sm text-gray-500 bg-gray-100 border-gray-900 border border-dotted rounded-md px-2;
 }
+
 .account-transaction-8 {
     @apply mt-2 flex text-sm text-gray-500 sm:mt-0;
 }
+
 .account-transaction-9 {
     @apply mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400;
 }
@@ -170,39 +192,103 @@
 .account-transaction-modal-1 {
     @apply relative z-10;
 }
+
 .account-transaction-modal-2 {
     @apply fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity;
 }
+
 .account-transaction-modal-3 {
     @apply fixed inset-0 z-10 overflow-y-auto;
 }
+
 .account-transaction-modal-4 {
     @apply flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0;
 }
+
 .account-transaction-modal-5 {
     @apply relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6;
 }
+
 .account-transaction-modal-6 {
     @apply mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100;
 }
+
 .account-transaction-modal-7 {
     @apply h-6 w-6 text-green-600;
 }
+
 .account-transaction-modal-8 {
     @apply mt-3 text-center sm:mt-5;
 }
+
 .account-transaction-modal-9 {
     @apply text-lg font-medium leading-6 text-gray-900;
 }
+
 .account-transaction-modal-10 {
     @apply mt-2;
 }
+
 .account-transaction-modal-11 {
     @apply text-sm text-gray-500;
 }
+
 .account-transaction-modal-12 {
     @apply mt-5 sm:mt-6;
 }
+
 .account-transaction-modal-13 {
     @apply inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm;
+}
+
+.modal-container {
+    @apply relative z-10;
+}
+
+.modal-backdrop {
+    @apply fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity;
+}
+
+.modal-screen {
+    @apply fixed inset-0 z-10 overflow-y-auto;
+}
+
+.modal-wrapper {
+    @apply flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0;
+}
+
+.modal-box {
+    @apply relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6;
+}
+
+.modal-button-error {
+    @apply inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:text-sm;
+}
+
+.modal-text-wrapper {
+    @apply mt-3 text-center sm:mt-5;
+}
+
+.modal-title {
+    @apply text-lg font-medium leading-6 text-gray-900;
+}
+
+.modal-text {
+    @apply mt-2 text-sm text-gray-500
+}
+
+.modal-color-error {
+    @apply bg-red-100 text-red-600;
+}
+
+.modal-button-wrapper {
+    @apply mt-5 sm:mt-6;
+}
+
+.icon {
+    @apply h-6 w-6;
+}
+
+.icon-wrapper {
+    @apply mx-auto flex h-12 w-12 items-center justify-center rounded-full;
 }
