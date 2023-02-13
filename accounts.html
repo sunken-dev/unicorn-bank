@@ -17,7 +17,8 @@
             </div>
             <div class="account-section-transaction-create-4">
                 <button type="button"
-                        class="account-section-transaction-create-4-btn">
+                        class="account-section-transaction-create-4-btn"
+                        id="openTransactionModal">
                     Create new job
                 </button>
             </div>
@@ -33,10 +34,61 @@
     </div>
 </div>
 
+<div id="transactionModal" class="account-transaction-modal-1" aria-labelledby="modal-title" role="dialog"
+     aria-modal="none">
+    <div class="account-transaction-modal-2"></div>
+    <div class="account-transaction-modal-3">
+        <div class="account-transaction-modal-4">
+            <!--
+              Modal panel, show/hide based on modal state.
+            -->
+            <div class="account-transaction-modal-5">
+                <div>
+                    <div class="account-transaction-modal-6">
+                        <svg class="account-transaction-modal-7" xmlns="http://www.w3.org/2000/svg" fill="none"
+                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+                        </svg>
+                    </div>
+                    <div class="account-transaction-modal-8">
+                        <h3 class="account-transaction-modal-9" id="modal-title">Payment successful</h3>
+                        <div class="account-transaction-modal-10">
+                            <p class="account-transaction-modal-11">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Consequatur amet labore.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="account-transaction-modal-12">
+                    <button id="closeTransactionModal"
+                            type="button"
+                            class="account-transaction-modal-13"
+                    >
+                        Go back to dashboard
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script>
     document.getElementById("transaction-controls").hidden = !(readUrlParameters("admin") === "true");
-    console.log(readUrlParameters("username"));
+    let modal = document.getElementById("transactionModal");
+    modal.onchange = (evt) => {
+        modal.style.display = modal.ariaModal.valueOf();
+    };
+    document.getElementById("transactionModal").style.display = "none";
+    document.getElementById("openTransactionModal").onclick = () => {
+        modal.ariaModal = "";
+        modal.dispatchEvent(new Event("change"));
+    };
+    document.getElementById("closeTransactionModal").onclick = () => {
+        modal.ariaModal = "none";
+        modal.dispatchEvent(new Event("change"));
+    }
+    modal.dispatchEvent(new Event("change"));
+
     addTransaction("Netflix", "Entertainment", "- 25,99 €", "Feburary 5, 2023");
     addTransaction("Gehalt", "Income", "+ 3.741,57 €", "Feburary 7, 2023");
     addTransaction("Mediamarkt", "Shopping", "- 512,34 €", "Feburary 7, 2023");
