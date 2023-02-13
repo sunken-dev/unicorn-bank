@@ -13,7 +13,7 @@
     <div id="transaction-controls" class="account-section-transaction-header">
         <div class="account-section-transaction-create-1">
             <div class="account-section-transaction-create-2">
-                <h3 class="account-section-transaction-create-3"> Current Balance: <span class="account-balance">- 1.373,45 €</span> </h3>
+                <h3 class="account-section-transaction-create-3"> Current Balance: <span id="current-balance" class="account-balance">- 1.373,45 €</span> </h3>
             </div>
             <div class="account-section-transaction-create-4">
                 <button type="button"
@@ -195,14 +195,14 @@
     // document.getElementById("transaction-controls").hidden = !isAdmin();
     var admin = isAdmin();
 
-    addTransaction("Netflix", "Entertainment", "- 25,99 €", "Feburary 5, 2023");
-    addTransaction("Gehalt", "Income", "+ 2.141,57 €", "Feburary 7, 2023");
-    addTransaction("Mediamarkt", "Shopping", "- 512,34 €", "Feburary 7, 2023");
-    addTransaction("Rewe Group", "Groceries", "- 43,21 €", "Feburary 7, 2023");
-    addTransaction("Holmes", "Health", "- 79,99 €", "Feburary 7, 2023");
-    addTransaction("UBER RECIPT", "Transportation", "- 29,13 €", "Feburary 7, 2023");
-    addTransaction("Moneyback", "Cashback", "+ 23,00 €", "Feburary 7, 2023");
-    addTransaction("Miete", "Living", "- 958,00 €", "Feburary 7, 2023");
+    addTransaction("Netflix", "Entertainment", -25.99, "Feburary 5, 2023");
+    addTransaction("Gehalt", "Income", 2141.57, "Feburary 7, 2023");
+    addTransaction("Mediamarkt", "Shopping", -512.34, "Feburary 7, 2023");
+    addTransaction("Rewe Group", "Groceries", -43.21, "Feburary 7, 2023");
+    addTransaction("Holmes", "Health", -79.99, "Feburary 7, 2023");
+    addTransaction("UBER RECIPT", "Transportation", -29.13, "Feburary 7, 2023");
+    addTransaction("Moneyback", "Cashback", 23.00, "Feburary 7, 2023");
+    addTransaction("Miete", "Living", -958.00, "Feburary 7, 2023");
 
     function transferMoney() {
         let formData = document.forms["transaction"];
@@ -211,7 +211,7 @@
         let amount = formData["amount"].value;
         if (sender === "ceo") {
             if (admin === true) {
-                addTransaction("Transfer from UnicornBank CEO", "Other", "+ 3.234,27 €", "Feburary 15, 2023");
+                addTransaction("Transfer from UnicornBank CEO", "Other", amount, "Feburary 15, 2023");
                 return toggleModal('transaction-success');
             } else {
                 return toggleModal('transaction-error-non-admin');

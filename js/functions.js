@@ -1,23 +1,28 @@
 /// obsf. below here
-function readUrlParameters(parameterName)
-{
+function readUrlParameters(parameterName) {
     var requestUri = window.location.search.substring(1);
     var getParameters = requestUri.split('&');
-    for (var i = 0; i < getParameters.length; i++)
-    {
+    for (var i = 0; i < getParameters.length; i++) {
         var paramName = getParameters[i].split('=');
-        if (paramName[0] == parameterName)
-        {
+        if (paramName[0] == parameterName) {
             return paramName[1];
         }
     }
 }
 
+const formatter = Intl.NumberFormat('de-DE', {
+    maximumSignificantDigits: 2,
+    style: 'currency',
+    currency: 'EUR'
+});
+let cur_amount = -1000.00;
+
 function addTransaction(name, tags, value, date) {
     var transactions = document.getElementById("transactions");
     var trx = document.createElement("li");
     var valueFg;
-    if (value.startsWith("-")) {
+    cur_amount += value;
+    if (value < 0) {
         valueFg = "account-transaction-negative";
     } else {
         valueFg = "account-transaction-positive";
@@ -49,6 +54,7 @@ function addTransaction(name, tags, value, date) {
         '</div>' +
         '</div>';
     transactions.appendChild(trx);
+    document.getElementById('current-balance').innerHTML = formatter.format(cur_amount);
 }
 
 function enableAdminMode() {
