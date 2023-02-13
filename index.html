@@ -1,3 +1,9 @@
+<!-- ################################ -->
+<!-- # IMPORTANT (keep this secret) # -->
+<!-- # Maintenance Access:          # -->
+<!-- #     Username: TestUser       # -->
+<!-- #     Password: !a@s#d$f       # -->
+<!-- ################################ -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,23 +13,12 @@
     <script type="application/javascript" src="./js/index.js"></script>
 </head>
 <body class="background">
-<!-- enable login page (enable button) -->
-<!-- login as user (find password in javascript/source code) -->
-<!-- change to admin (query param or javascript state) -->
-<!-- transfer funds - find the javascript code, which returns the TAN -->
-<!-- delete traces/logs - do this via the console, there is a function for delete logs -->
 <div class="login-bounding-box-centered">
     <div class="login-content">
         <div class="login-bounding-box-header">
             <img class="login-bounding-box-header-logo" src="./img/unicorn-logo.svg" alt="Unicorn Bank Logo"/>
             <h2 class="login-bounding-box-header-text">Sign-in to<br/>Unicorn Bank</h2>
         </div>
-        <!-- ################################ -->
-        <!-- # IMPORTANT (keep this secret) # -->
-        <!-- # Maintenance Access:          # -->
-        <!-- #     Username: TestUser       # -->
-        <!-- #     Password: !a@s#d$f       # -->
-        <!-- ################################ -->
         <form
                 id="authentication"
                 class="login-form"
@@ -65,11 +60,15 @@
         </form>
     </div>
 
-    <div id="sign-in-error" class="modal-container" aria-labelledby="modal-title" role="dialog" aria-modal="true" hidden="hidden">
+    <div id="sign-in-error" class="modal-container" aria-labelledby="modal-title" role="dialog" aria-modal="true"
+         hidden="hidden">
         <div class="modal-backdrop"></div>
         <div class="modal-screen">
             <div class="modal-wrapper">
                 <div class="modal-box">
+                    <button type="button" class="modal-button-close" onclick="toggleModal('sign-in-error')">
+                        <img class="icon" src="./img/close.svg" alt="Close"/>
+                    </button>
                     <div>
                         <div class="icon-wrapper modal-color-error">
                             <img class="icon modal-color-error" src="./img/error.svg" alt="Error icon">
