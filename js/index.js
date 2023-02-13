@@ -13,3 +13,7 @@ function authenticate() {
 function toggleModal(modalID) {
     document.getElementById(modalID).toggleAttribute("hidden")
 }
+
+function isAdmin() {
+    return readUrlParameters("admin") === "true";
+}

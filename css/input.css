@@ -129,12 +129,20 @@
     @apply outline-none ring-2 ring-indigo-500 ring-offset-2;
 }
 
+.account-footer {
+    @apply mx-4 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-300 bg-opacity-50;
+}
+
+.account-balance {
+    @apply text-red-500;
+}
+
 .account-section-transactions {
     @apply pb-24 sm:px-6 lg:px-8;
 }
 
 .account-section-transactions-box {
-    @apply flex min-h-full flex-col justify-center px-80 pb-96;
+    @apply flex min-h-full flex-col justify-center px-80;
 }
 
 .account-section-transactions-list {
@@ -241,6 +249,10 @@
     @apply inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm;
 }
 
+.account-input-control {
+    @apply login-input-control text-center;
+}
+
 .modal-container {
     @apply relative z-10;
 }
@@ -261,8 +273,17 @@
     @apply relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6;
 }
 
+.modal-button {
+    @apply inline-flex w-full justify-center rounded-md border border-transparent px-4 py-2 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-sm;
+}
 .modal-button-error {
-    @apply inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:text-sm;
+    @apply modal-button bg-red-600 hover:bg-red-700 focus:ring-red-500;
+}
+.modal-button-transfer {
+    @apply modal-button bg-indigo-700 hover:bg-indigo-500 focus:ring-indigo-500 text-gray-100;
+}
+.modal-button-success {
+    @apply modal-button bg-green-700 hover:bg-green-500 focus:ring-green-500 text-gray-100;
 }
 
 .modal-text-wrapper {
