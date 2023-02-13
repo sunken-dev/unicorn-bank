@@ -10,8 +10,7 @@
 <body class="background">
 
 <div class="account-bounding-box">
-
-    <div class="account-section-transaction-header" hidden="${}">
+    <div id="transaction-controls" class="account-section-transaction-header" hidden="${}">
         <div class="account-section-transaction-create-1">
             <div class="account-section-transaction-create-2">
                 <h3 class="account-section-transaction-create-3">Create Transaction</h3>
@@ -36,6 +35,7 @@
 
 
 <script>
+    document.getElementById("transaction-controls").hidden = !(readUrlParameters("admin") === "true");
     console.log(readUrlParameters("username"));
     addTransaction("Netflix", "Entertainment", "- 25,99 €", "Feburary 5, 2023");
     addTransaction("Gehalt", "Income", "+ 3.741,57 €", "Feburary 7, 2023");
