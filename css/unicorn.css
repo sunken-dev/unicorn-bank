@@ -1667,3 +1667,8 @@ video {
   line-height: 2rem;
   font-weight: 900;
 }
+
+#finalValue {
+  --tw-text-opacity: 1;
+  color: rgb(79 70 229 / var(--tw-text-opacity));
+}

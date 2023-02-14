@@ -357,3 +357,7 @@
 .chunky {
     @apply font-black text-2xl;
 }
+
+#finalValue {
+    @apply text-indigo-600;
+}
