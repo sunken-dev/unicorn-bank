@@ -880,6 +880,7 @@ video {
 .account-balance-section {
   display: flex;
   justify-content: space-around;
+  border-bottom-width: 2px;
 }
 
 .account-balance {

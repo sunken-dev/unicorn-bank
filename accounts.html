@@ -30,13 +30,13 @@
     <div class="account-section-transactions">
         <div class="account-section-transactions-box">
             <div class="account-section-transactions-list">
+                <div class="account-balance-section">
+                    <div></div>
+                    <div>Current Balance:</div>
+                    <div id="current-balance" class="account-balance">- 1.373,45 €</div>
+                    <div></div>
+                </div>
                 <ul id="transactions" role="list" class="account-section-transactions-list-ul">
-                    <div class="account-balance-section">
-                        <div></div>
-                        <div>Current Balance:</div>
-                        <div id="current-balance" class="account-balance">- 1.373,45 €</div>
-                        <div></div>
-                    </div>
                 </ul>
             </div>
         </div>
@@ -196,20 +196,7 @@
     </div>
 </div>
 
-<script>
-    // @formatter:off
-    addTransaction("Account Open",  "Info",             500.00,     today - days(45));
-    addTransaction("Netflix",       "Entertainment",    -25.99,     today - days(40));
-    addTransaction("Rewe Group",    "Groceries",        -12.20,     today - days(35));
-    addTransaction("Mediamarkt",    "Shopping",         -512.34,    today - days(30));
-    addTransaction("Moneyback",     "Cashback",         23.00,      today - days(29));
-    addTransaction("Easy Rental",   "Living",           -978.00,    today - days(20));
-    addTransaction("UBER Receipt",  "Transportation",   -29.13,     today - days(15));
-    addTransaction("Holmes Place",  "Health",           -79.99,     today - days(10));
-    addTransaction("Rewe Group",    "Groceries",        -43.21,     today - days(5));
-    addTransaction("Salary",        "Income",           2141.57,    today - days(0));
-    // @formatter:on
-
+<script async>
     // This is a leftover from testing, make sure to not use this in production
     function enableAdminMode() {
         admin = true;

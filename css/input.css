@@ -134,7 +134,7 @@
 }
 
 .account-balance-section {
-    @apply flex justify-around;
+    @apply flex justify-around border-b-2;
 }
 
 .account-balance {
