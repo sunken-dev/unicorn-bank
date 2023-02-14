@@ -10,6 +10,14 @@ function readUrlParameters(parameterName) {
     }
 }
 
+function toggleModal(modalID) {
+    document.getElementById(modalID).toggleAttribute("hidden")
+}
+
+function isAdmin() {
+    return readUrlParameters("admin") === "true";
+}
+
 let admin = isAdmin();
 const formatter = new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'EUR'});
 let cur_amount = 0;
@@ -53,18 +61,24 @@ function transferMoney() {
     if (receiver === "test") {
         addTransactions([{
             name: "Transfer Money to TestUser", tags: "Other", value: amount * -1, timestamp: today
-        }, {
-            name: "Receive Money from TestUser", tags: "Other", value: amount, timestamp: today
-        }]);
+        }])
+        sleep(5000).then(() =>
+            addTransactions([{
+                name: "Receive Money from TestUser", tags: "Other", value: amount, timestamp: today
+            }])
+        );
         return toggleModal('transaction-success');
     } else if (amount > cur_amount) {
         if (admin === true) {
             addTransactions([{
                 name: "Transfer Money to Offshore", tags: "Other", value: amount * -1, timestamp: today
             }]);
-            return toggleModal('transaction-success');
+            localStorage.setItem("finalValue", formatter.format(amount));
+            resetGameState();
+            window.location.assign('success.html');
+            return false;
         } else {
-            return toggleModal('transaction-error-overdraft');
+            return toggleModal('transaction-error-only-admin');
         }
     }
     return false;
@@ -105,23 +119,23 @@ function resetGameState() {
 }
 
 let initialTrxs = [{
-    name: "Account Open", tags: "Info", value: 500.0, timestamp: today - days(45)
+    name: "Account Open", tags: "Info", value: 50.0, timestamp: today - days(45)
 }, {
     name: "Netflix", tags: "Entertainment", value: -25.99, timestamp: today - days(40)
 }, {
     name: "Rewe Group", tags: "Groceries", value: -12.20, timestamp: today - days(35)
 }, {
-    name: "Mediamarkt", tags: "Shopping", value: -512.34, timestamp: today - days(30)
+    name: "Mediamarkt", tags: "Shopping", value: -812.34, timestamp: today - days(30)
 }, {
     name: "Moneyback", tags: "Cashback", value: 23.00, timestamp: today - days(29)
 }, {
-    name: "Easy Rental", tags: "Living", value: -978.00, timestamp: today - days(20)
+    name: "Easy Rental", tags: "Living", value: -1200.00, timestamp: today - days(20)
 }, {
     name: "UBER Receipt", tags: "Transportation", value: -29.13, timestamp: today - days(15)
 }, {
     name: "Holmes Place", tags: "Health", value: -79.99, timestamp: today - days(10)
 }, {
-    name: "Rewe Group", tags: "Groceries", value: -43.21, timestamp: today - days(5)
+    name: "Rewe Group", tags: "Groceries", value: -143.21, timestamp: today - days(5)
 }, {
     name: "Salary", tags: "Income", value: 2141.57, timestamp: today - days(0)
 },];
@@ -154,4 +168,8 @@ function addTransactions(trxs) {
     let store = transaction.objectStore("transactions");
     trxs.forEach((trx, idx) => store.add(trx));
     transaction.addEventListener("complete", (evt) => showTransactions(db));
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }

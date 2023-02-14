@@ -6,15 +6,7 @@ function authenticate() {
     if (username === "TestUser" && password === "!a@s#d$f") {
         window.location.assign(window.atob('Li9hY2NvdW50cy5odG1sP2FkbWluPWZhbHNl'));
     } else {
-        toggleModal('sign-in-error');
+        document.getElementById('sign-in-error').toggleAttribute("hidden")
     }
     return false;
-}
-
-function toggleModal(modalID) {
-    document.getElementById(modalID).toggleAttribute("hidden")
-}
-
-function isAdmin() {
-    return readUrlParameters("admin") === "true";
 }

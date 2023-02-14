@@ -141,13 +141,13 @@
     </div>
 </div>
 
-<div id="transaction-error-overdraft" class="modal-container" aria-labelledby="modal-title" role="dialog"
+<div id="transaction-error-only-admin" class="modal-container" aria-labelledby="modal-title" role="dialog"
      aria-modal="true" hidden="hidden">
     <div class="modal-backdrop"></div>
     <div class="modal-screen">
         <div class="modal-wrapper">
             <div class="modal-box">
-                <button type="button" class="modal-button-close" onclick="toggleModal('transaction-error-overdraft')">
+                <button type="button" class="modal-button-close" onclick="toggleModal('transaction-error-only-admin')">
                     <img class="icon" src="./img/close.svg" alt="Close"/>
                 </button>
                 <div>
@@ -156,13 +156,13 @@
                     </div>
                     <div class="modal-text-wrapper">
                         <h3 class="modal-title">Transfer error!</h3>
-                        <p class="modal-text">You can not overdraft your account!</p>
+                        <p class="modal-text">Only Administrators can transfer to external accounts.</p>
                     </div>
                 </div>
                 <div class="modal-button-wrapper">
                     <button type="button"
                             class="modal-button-error"
-                            onclick="toggleModal('transaction-error-overdraft')">
+                            onclick="toggleModal('transaction-error-only-admin')">
                         Okay, I understand
                     </button>
                 </div>
@@ -183,7 +183,7 @@
                     </div>
                     <div class="modal-text-wrapper">
                         <h3 class="modal-title">Transfer successful!</h3>
-                        <p class="modal-text">You successfully transfered the money!</p>
+                        <p class="modal-text">You successfully transferred the money!</p>
                     </div>
                 </div>
                 <div class="modal-button-wrapper">
