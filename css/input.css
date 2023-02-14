@@ -133,8 +133,12 @@
     @apply mx-4 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-300 bg-opacity-50;
 }
 
+.account-balance-section {
+    @apply flex justify-around;
+}
+
 .account-balance {
-    @apply text-red-500;
+    @apply text-red-500 ml-2;
 }
 
 .account-section-transactions {
@@ -159,6 +163,14 @@
 
 .account-transaction-positive {
     @apply text-green-800 bg-green-100;
+}
+
+.account-total-negative {
+    @apply text-red-500;
+}
+
+.account-total-positive {
+    @apply text-green-500;
 }
 
 .account-transaction-1 {

@@ -877,7 +877,13 @@ video {
   }
 }
 
+.account-balance-section {
+  display: flex;
+  justify-content: space-around;
+}
+
 .account-balance {
+  margin-left: 0.5rem;
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
@@ -944,6 +950,16 @@ video {
   background-color: rgb(220 252 231 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(22 101 52 / var(--tw-text-opacity));
+}
+
+.account-total-negative {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.account-total-positive {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity));
 }
 
 .account-transaction-1 {

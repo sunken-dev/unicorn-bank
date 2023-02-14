@@ -31,7 +31,12 @@
         <div class="account-section-transactions-box">
             <div class="account-section-transactions-list">
                 <ul id="transactions" role="list" class="account-section-transactions-list-ul">
-                    <li>Current Balance:<span id="current-balance" class="account-balance">- 1.373,45 €</span></li>
+                    <div class="account-balance-section">
+                        <div></div>
+                        <div>Current Balance:</div>
+                        <div id="current-balance" class="account-balance">- 1.373,45 €</div>
+                        <div></div>
+                    </div>
                 </ul>
             </div>
         </div>
@@ -84,6 +89,7 @@
                                         id="transaction-value"
                                         name="amount"
                                         type="number"
+                                        min="1"
                                         class="account-input-control"
                                         autocomplete="off"
                                         required
@@ -191,50 +197,24 @@
 </div>
 
 <script>
-    // document.getElementById("transaction-controls").hidden = !isAdmin();
-    const admin = isAdmin();
-
-    const today = Date.now();
-    const days = (dayCount) => 1000 * 60 * 60 * 24 * dayCount;
     // @formatter:off
     addTransaction("Account Open",  "Info",             500.00,     today - days(45));
     addTransaction("Netflix",       "Entertainment",    -25.99,     today - days(40));
     addTransaction("Rewe Group",    "Groceries",        -12.20,     today - days(35));
     addTransaction("Mediamarkt",    "Shopping",         -512.34,    today - days(30));
     addTransaction("Moneyback",     "Cashback",         23.00,      today - days(29));
-    addTransaction("Easy Rental",   "Living",           -958.00,    today - days(20));
+    addTransaction("Easy Rental",   "Living",           -978.00,    today - days(20));
     addTransaction("UBER Receipt",  "Transportation",   -29.13,     today - days(15));
     addTransaction("Holmes Place",  "Health",           -79.99,     today - days(10));
     addTransaction("Rewe Group",    "Groceries",        -43.21,     today - days(5));
     addTransaction("Salary",        "Income",           2141.57,    today - days(0));
     // @formatter:on
 
-    function transferMoney() {
-        let formData = document.forms["transaction"];
-        let receiver = formData["receiver"].value;
-        let amount = formData["amount"].value;
-        if(amount > cur_amount) {
-            if (admin === true) {
-                addTransaction("Transfer from UnicornBank CEO", "Other", amount, "Feburary 15, 2023");
-                return toggleModal('transaction-success');
-            } else {
-                return toggleModal('transaction-error-non-admin');
-            }
-        } else if (sender === "self") {
-            return toggleModal('transaction-error-overdraft');
-        }
-        return false;
-    }
-
-    // This is a leftover from testing, don't use this in production
-    function makeAdmin() {
+    // This is a leftover from testing, make sure to not use this in production
+    function enableAdminMode() {
         admin = true;
         console.log("turning on administrator mode - unlocking all features!");
     }
-
-    // debug mode:
-    // toggleModal('transaction-modal');
-    // toggleModal('transaction-success');
 </script>
 </body>
 </html>

@@ -10,11 +10,14 @@ function readUrlParameters(parameterName) {
     }
 }
 
+let admin = isAdmin();
 const formatter = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' });
 let cur_amount = -1000.00;
 
+const today = Date.now();
+const days = (dayCount) => 1000 * 60 * 60 * 24 * dayCount;
+
 function addTransaction(name, tags, value, timestamp) {
-    const transactions = document.getElementById("transactions");
     const trx = document.createElement("li");
     let valueFg = (value < 0) ? "account-transaction-negative" : "account-transaction-positive";
     cur_amount += value;
@@ -35,10 +38,34 @@ function addTransaction(name, tags, value, timestamp) {
             </div>
         </div>
     `;
-    transactions.prepend(trx);
-    document.getElementById('current-balance').innerHTML = formatter.format(cur_amount);
+    let trxs = document.querySelector("#transactions li");
+    if (trxs) {
+        trxs.prepend(trx);
+    } else {
+        document.querySelector("#transactions").append(trx);
+    }
+    let currentBalance = document.getElementById('current-balance');
+    let balanceClass = (cur_amount < 0) ? "account-total-negative" : "account-total-positive";
+    currentBalance.innerHTML = formatter.format(cur_amount);
+    currentBalance.className = balanceClass;
+
 }
 
-function enableAdminMode() {
-
+function transferMoney() {
+    let formData = document.forms["transaction"];
+    let receiver = formData["receiver"].value;
+    let amount = parseInt(formData["amount"].value);
+    if (receiver === "test") {
+        addTransaction("Transfer Money", "Other", amount * -1, today);
+        addTransaction("Receive Money", "Other", amount, today);
+        return toggleModal('transaction-success');
+    } else if(amount > cur_amount) {
+        if (admin === true) {
+            addTransaction("Transfer Money", "Other", amount, today);
+            return toggleModal('transaction-success');
+        } else {
+            return toggleModal('transaction-error-overdraft');
+        }
+    }
+    return false;
 }
