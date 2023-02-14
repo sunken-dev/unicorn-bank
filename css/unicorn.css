@@ -877,10 +877,17 @@ video {
   }
 }
 
-.account-balance-section {
-  display: flex;
-  justify-content: space-around;
+.account-section-transactions-balance {
   border-bottom-width: 2px;
+  font-weight: 700;
+}
+
+.account-section-transactions-balance > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+  --tw-divide-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-divide-opacity));
 }
 
 .account-balance {
@@ -984,6 +991,16 @@ video {
 }
 
 .account-transaction-3 {
+  padding-left: 0px;
+  padding-right: 0px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(79 70 229 / var(--tw-text-opacity));
+}
+
+.account-transaction-current-balance {
   padding-left: 0px;
   padding-right: 0px;
   font-size: 0.875rem;
@@ -1638,4 +1655,10 @@ video {
   line-height: 1.5rem;
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.chunky {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 900;
 }

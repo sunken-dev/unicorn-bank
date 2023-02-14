@@ -41,10 +41,9 @@ function showTransaction(name, tags, value, timestamp) {
     let trxs = document.getElementById("transactions");
     trxs.prepend(trx);
     let currentBalance = document.getElementById('current-balance');
-    let balanceClass = (cur_amount < 0) ? "account-total-negative" : "account-total-positive";
+    let balanceClass = (cur_amount < 0) ? "account-transaction-negative" : "account-transaction-positive";
     currentBalance.innerHTML = formatter.format(cur_amount);
-    currentBalance.className = balanceClass;
-
+    currentBalance.className = "account-transaction-4 " + balanceClass + " chunky";
 }
 
 function transferMoney() {

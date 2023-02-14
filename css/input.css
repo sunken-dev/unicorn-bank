@@ -133,8 +133,8 @@
     @apply mx-4 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-300 bg-opacity-50;
 }
 
-.account-balance-section {
-    @apply flex justify-around border-b-2;
+.account-section-transactions-balance {
+    @apply account-section-transactions-list-ul border-b-2 font-bold;
 }
 
 .account-balance {
@@ -183,6 +183,10 @@
 
 .account-transaction-3 {
     @apply text-sm font-medium text-indigo-600 px-0;
+}
+
+.account-transaction-current-balance {
+    @apply account-transaction-3 font-bold;
 }
 
 .account-transaction-4 {
@@ -344,4 +348,8 @@
 
 .logo-text {
     @apply font-black text-2xl align-middle leading-6 text-gray-900 inline;
+}
+
+.chunky {
+    @apply font-black text-2xl;
 }
