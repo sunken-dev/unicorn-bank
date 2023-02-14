@@ -69,7 +69,7 @@ function transferMoney() {
 let db;
 
 function setupGameState(resolve) {
-    console.log("setup game state");
+    console.log("setup game state. In order to reset the gamestate execute `resetGameState()` in the console!");
     let openDb = window.indexedDB.open("unicorn-bank", 1);
     openDb.addEventListener("error", (err) => console.error("Unable to open IndexDB!", err));
     openDb.addEventListener("success", (evt) => {
@@ -94,6 +94,11 @@ function setupGameState(resolve) {
             add.addEventListener("error", (evt) => console.log("failed to add trasaction", trx, evt))
         })
     });
+}
+
+function resetGameState() {
+    indexedDB.deleteDatabase("unicorn-bank");
+    location.reload();
 }
 
 let initialTrxs = [
@@ -168,7 +173,6 @@ new Promise(function (resolve, reject) {
 function showTransactions(db) {
     let old = document.getElementById("transactions");
     if (old) {
-        console.log("removing table", old);
         old.innerHTML = '';
     }
     let store = db.transaction("transactions").objectStore("transactions");
