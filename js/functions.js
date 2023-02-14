@@ -131,13 +131,13 @@ let initialTrxs = [{
 }, {
     name: "Easy Rental", tags: "Living", value: -1200.00, timestamp: today - days(20)
 }, {
-    name: "UBER Receipt", tags: "Transportation", value: -29.13, timestamp: today - days(15)
+    name: "UBER Receipt", tags: "Transportation", value: -25.13, timestamp: today - days(15)
 }, {
     name: "Holmes Place", tags: "Health", value: -79.99, timestamp: today - days(10)
 }, {
     name: "Rewe Group", tags: "Groceries", value: -143.21, timestamp: today - days(5)
 }, {
-    name: "Salary", tags: "Income", value: 2141.57, timestamp: today - days(0)
+    name: "Salary", tags: "Income", value: 2341.57, timestamp: today - days(0)
 },];
 
 new Promise(function (resolve, reject) {

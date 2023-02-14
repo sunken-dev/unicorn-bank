@@ -59,8 +59,8 @@
                         <img class="icon" src="./img/close.svg" alt="Close"/>
                     </button>
                     <div>
-                        <div class="icon-wrapper">
-                            <img class="icon" src="./img/transfer.svg" alt="Error icon">
+                        <div class="icon-wrapper modal-color-neutral">
+                            <img class="icon modal-color-neutral" src="./img/transfer.svg" alt="Transfer icon">
                         </div>
                         <div class="modal-text-wrapper">
                             <h3 class="modal-title">Transfer Money</h3>
@@ -97,6 +97,7 @@
                                         class="account-input-control"
                                         autocomplete="off"
                                         required
+                                        value="100.00"
                                 >
                             </div>
                         </div>
@@ -111,36 +112,6 @@
             </div>
         </div>
     </form>
-</div>
-
-<div id="transaction-error-non-admin" class="modal-container" aria-labelledby="modal-title" role="dialog"
-     aria-modal="true" hidden="hidden">
-    <div class="modal-backdrop"></div>
-    <div class="modal-screen">
-        <div class="modal-wrapper">
-            <div class="modal-box">
-                <button type="button" class="modal-button-close" onclick="toggleModal('transaction-error-non-admin')">
-                    <img class="icon" src="./img/close.svg" alt="Close"/>
-                </button>
-                <div>
-                    <div class="icon-wrapper modal-color-error">
-                        <img class="icon modal-color-error" src="./img/error.svg" alt="Error icon">
-                    </div>
-                    <div class="modal-text-wrapper">
-                        <h3 class="modal-title">Transfer error!</h3>
-                        <p class="modal-text">Only administrators can transfer money from our CEO!</p>
-                    </div>
-                </div>
-                <div class="modal-button-wrapper">
-                    <button type="button"
-                            class="modal-button-error"
-                            onclick="toggleModal('transaction-error-non-admin')">
-                        Okay, I understand
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <div id="transaction-error-only-admin" class="modal-container" aria-labelledby="modal-title" role="dialog"
@@ -179,9 +150,12 @@
     <div class="modal-screen">
         <div class="modal-wrapper">
             <div class="modal-box">
+                <button type="button" class="modal-button-close" onclick="toggleModal('transaction-success')">
+                    <img class="icon" src="./img/close.svg" alt="Close"/>
+                </button>
                 <div>
-                    <div class="icon-wrapper">
-                        <img class="icon" src="./img/success.svg" alt="Success icon">
+                    <div class="icon-wrapper modal-color-success">
+                        <img class="icon modal-color-success" src="./img/success.svg" alt="Success icon">
                     </div>
                     <div class="modal-text-wrapper">
                         <h3 class="modal-title">Transfer successful!</h3>
@@ -190,9 +164,9 @@
                 </div>
                 <div class="modal-button-wrapper">
                     <button type="button"
-                            class="modal-button-error"
+                            class="modal-button-transfer"
                             onclick="toggleModal('transaction-success'); toggleModal('transaction-modal')">
-                        Okay, I understand
+                        Back to Overview
                     </button>
                 </div>
             </div>

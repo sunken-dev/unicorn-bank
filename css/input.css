@@ -325,6 +325,14 @@
     @apply bg-red-100 text-red-600;
 }
 
+.modal-color-success {
+    @apply bg-green-100 text-green-600;
+}
+
+.modal-color-neutral {
+    @apply bg-indigo-100 text-indigo-600;
+}
+
 .modal-button-wrapper {
     @apply mt-5 sm:mt-6;
 }
