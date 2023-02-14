@@ -64,7 +64,7 @@
                         </div>
                         <div class="modal-text-wrapper">
                             <h3 class="modal-title">Transfer Money</h3>
-                            <p class="modal-text">Transfer Money from your Account to another!</p>
+                            <p class="modal-text">Transfer Money from your Account!</p>
                         </div>
                     </div>
                     <div>
@@ -97,7 +97,7 @@
                                         class="account-input-control"
                                         autocomplete="off"
                                         required
-                                        value="100.00"
+                                        value="5000.00"
                                 >
                             </div>
                         </div>
@@ -144,6 +144,36 @@
     </div>
 </div>
 
+<div id="transaction-error-no-overdraft" class="modal-container" aria-labelledby="modal-title" role="dialog"
+     aria-modal="true" hidden="hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-screen">
+        <div class="modal-wrapper">
+            <div class="modal-box">
+                <button type="button" class="modal-button-close" onclick="toggleModal('transaction-error-no-overdraft')">
+                    <img class="icon" src="./img/close.svg" alt="Close"/>
+                </button>
+                <div>
+                    <div class="icon-wrapper modal-color-error">
+                        <img class="icon modal-color-error" src="./img/error.svg" alt="Error icon">
+                    </div>
+                    <div class="modal-text-wrapper">
+                        <h3 class="modal-title">Transfer error!</h3>
+                        <p class="modal-text">Overdrafts is an experimental feature which is currently turned off.</p>
+                    </div>
+                </div>
+                <div class="modal-button-wrapper">
+                    <button type="button"
+                            class="modal-button-error"
+                            onclick="toggleModal('transaction-error-no-overdraft')">
+                        Okay, I understand
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="transaction-success" class="modal-container" aria-labelledby="modal-title" role="dialog" aria-modal="true"
      hidden="hidden">
     <div class="modal-backdrop"></div>
@@ -165,7 +195,7 @@
                 <div class="modal-button-wrapper">
                     <button type="button"
                             class="modal-button-transfer"
-                            onclick="toggleModal('transaction-success'); toggleModal('transaction-modal')">
+                            onclick="toggleModal('transaction-success');">
                         Back to Overview
                     </button>
                 </div>

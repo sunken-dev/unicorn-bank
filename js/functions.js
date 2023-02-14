@@ -19,6 +19,7 @@ function isAdmin() {
 }
 
 let admin = isAdmin();
+let overdraft = false
 const formatter = new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'EUR'});
 let cur_amount = 0;
 
@@ -59,6 +60,9 @@ function transferMoney() {
     let receiver = formData["receiver"].value;
     let amount = parseInt(formData["amount"].value);
     if (receiver === "test") {
+        if (amount > cur_amount && overdraft === false) {
+            return toggleModal('transaction-error-no-overdraft');
+        }
         addTransactions([{
             name: "Transfer Money to TestUser", tags: "Other", value: amount * -1, timestamp: today
         }])
@@ -67,19 +71,24 @@ function transferMoney() {
                 name: "Receive Money from TestUser", tags: "Other", value: amount, timestamp: today
             }])
         );
+        document.getElementById("transaction").reset();
+        toggleModal('transaction-modal');
         return toggleModal('transaction-success');
-    } else if (amount > cur_amount) {
-        if (admin === true) {
-            addTransactions([{
-                name: "Transfer Money to Offshore", tags: "Other", value: amount * -1, timestamp: today
-            }]);
-            localStorage.setItem("finalValue", formatter.format(amount));
-            resetGameState();
-            window.location.assign('success.html');
-            return false;
-        } else {
-            return toggleModal('transaction-error-only-admin');
+    } else if (admin === true) {
+        if (amount > cur_amount && overdraft === false) {
+            return toggleModal('transaction-error-no-overdraft');
         }
+        addTransactions([{
+            name: "Transfer Money to Offshore", tags: "Other", value: amount * -1, timestamp: today
+        }]);
+        let offshoreStorage = localStorage.getItem("offshore");
+        let offshore = (offshoreStorage === null ? 0 : parseInt(offshoreStorage)) + amount;
+        localStorage.setItem("offshore", offshore + "");
+        localStorage.setItem("finalValue", formatter.format(offshore));
+        window.location.assign(window.atob('c3VjY2Vzcy5odG1s'));
+        return false;
+    } else {
+        return toggleModal('transaction-error-only-admin');
     }
     return false;
 }
@@ -87,7 +96,6 @@ function transferMoney() {
 let db;
 
 function setupGameState(resolve) {
-    console.log("setup game state. In order to reset the gamestate execute `resetGameState()` in the console!");
     let openDb = window.indexedDB.open("unicorn-bank", 1);
     openDb.addEventListener("error", (err) => console.error("Unable to open IndexDB!", err));
     openDb.addEventListener("success", (evt) => {
@@ -108,36 +116,41 @@ function setupGameState(resolve) {
         initialTrxs.forEach((trx, idx) => {
             let add = store.add(trx);
             add.addEventListener("success", (evt) => console.log("successfully added", trx))
-            add.addEventListener("error", (evt) => console.log("failed to add trasaction", trx, evt))
+            add.addEventListener("error", (evt) => console.log("failed to add transaction", trx, evt))
         })
     });
 }
 
-function resetGameState() {
+function resetGameState(restart = false) {
     indexedDB.deleteDatabase("unicorn-bank");
-    location.reload();
+    localStorage.clear();
+    if(restart === true) {
+        window.location.assign("index.html");
+    } else {
+        window.location.reload();
+    }
 }
 
 let initialTrxs = [{
     name: "Account Open", tags: "Info", value: 50.0, timestamp: today - days(45)
 }, {
-    name: "Netflix", tags: "Entertainment", value: -25.99, timestamp: today - days(40)
+    name: "Salary", tags: "Income", value: 2300.12, timestamp: today - days(38)
 }, {
-    name: "Rewe Group", tags: "Groceries", value: -12.20, timestamp: today - days(35)
+    name: "Rewe Group", tags: "Groceries", value: -152.20, timestamp: today - days(35)
+}, {
+    name: "Netflix", tags: "Entertainment", value: -25.99, timestamp: today - days(30)
 }, {
     name: "Mediamarkt", tags: "Shopping", value: -812.34, timestamp: today - days(30)
-}, {
-    name: "Moneyback", tags: "Cashback", value: 23.00, timestamp: today - days(29)
 }, {
     name: "Easy Rental", tags: "Living", value: -1200.00, timestamp: today - days(20)
 }, {
     name: "UBER Receipt", tags: "Transportation", value: -25.13, timestamp: today - days(15)
 }, {
-    name: "Holmes Place", tags: "Health", value: -79.99, timestamp: today - days(10)
+    name: "Holmes Place", tags: "Health", value: -79.99, timestamp: today - days(12)
 }, {
-    name: "Rewe Group", tags: "Groceries", value: -143.21, timestamp: today - days(5)
+    name: "Rewe Group", tags: "Groceries", value: -143.21, timestamp: today - days(10)
 }, {
-    name: "Salary", tags: "Income", value: 2341.57, timestamp: today - days(0)
+    name: "Salary", tags: "Income", value: 2341.57, timestamp: today - days(8)
 },];
 
 new Promise(function (resolve, reject) {
