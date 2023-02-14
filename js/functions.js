@@ -12,7 +12,7 @@ function readUrlParameters(parameterName) {
 
 let admin = isAdmin();
 const formatter = new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'EUR'});
-let cur_amount = -1000.00;
+let cur_amount = 0;
 
 const today = Date.now();
 const days = (dayCount) => 1000 * 60 * 60 * 24 * dayCount;
@@ -137,6 +137,7 @@ function showTransactions(db) {
     let old = document.getElementById("transactions");
     if (old) {
         old.innerHTML = '';
+        cur_amount = 0;
     }
     let store = db.transaction("transactions").objectStore("transactions");
     store.openCursor().addEventListener("success", (evt) => {
