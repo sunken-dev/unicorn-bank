@@ -94,11 +94,11 @@
 }
 
 .account-bounding-box {
-    @apply flex min-h-full flex-col;
+    @apply flex min-h-full flex-col gap-y-8;
 }
 
 .account-section-transaction-header {
-    @apply border-b border-gray-200 bg-white bg-opacity-30 px-4 py-5 sm:px-6;
+    @apply border-b border-gray-200 bg-white bg-opacity-80 px-4 py-5 sm:px-6;
 }
 
 .account-section-transaction-create-1 {
@@ -106,7 +106,7 @@
 }
 
 .account-section-transaction-create-2 {
-    @apply ml-4 mt-2;
+    @apply ml-4 mt-2 text-lg font-medium leading-6 text-gray-900;
 }
 
 .account-section-transaction-create-3 {
@@ -324,4 +324,12 @@
 
 .icon-wrapper {
     @apply mx-auto flex h-12 w-12 items-center justify-center rounded-full;
+}
+
+.logo-small {
+    @apply h-12 w-12 inline;
+}
+
+.logo-text {
+    @apply font-black text-2xl align-middle leading-6 text-gray-900 inline;
 }

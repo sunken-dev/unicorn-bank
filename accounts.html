@@ -13,14 +13,15 @@
     <div id="transaction-controls" class="account-section-transaction-header">
         <div class="account-section-transaction-create-1">
             <div class="account-section-transaction-create-2">
-                <h3 class="account-section-transaction-create-3"> Current Balance: <span id="current-balance" class="account-balance">- 1.373,45 €</span> </h3>
+                <img class="logo-small" src="./img/unicorn-logo.svg" alt="Unicorn Bank Logo" />
+                <h3 class="logo-text">Welcome to Unicorn Bank: TestUser</h3>
             </div>
             <div class="account-section-transaction-create-4">
                 <button type="button"
                         class="account-section-transaction-create-4-btn"
                         onclick="toggleModal('transaction-modal')"
                         id="openTransactionModal">
-                    Transfer Money
+                    New Money Transfer
                 </button>
             </div>
         </div>
@@ -29,10 +30,13 @@
     <div class="account-section-transactions">
         <div class="account-section-transactions-box">
             <div class="account-section-transactions-list">
-                <ul id="transactions" role="list" class="account-section-transactions-list-ul"></ul>
+                <ul id="transactions" role="list" class="account-section-transactions-list-ul">
+                    <li>Current Balance:<span id="current-balance" class="account-balance">- 1.373,45 €</span></li>
+                </ul>
             </div>
         </div>
     </div>
+
 </div>
 
 <div id="transaction-modal" class="modal-container" aria-labelledby="modal-title" role="dialog" aria-modal="true"
@@ -42,6 +46,9 @@
         <div class="modal-screen">
             <div class="modal-wrapper">
                 <div class="modal-box">
+                    <button type="button" class="modal-button-close" onclick="toggleModal('transaction-modal')">
+                        <img class="icon" src="./img/close.svg" alt="Close"/>
+                    </button>
                     <div>
                         <div class="icon-wrapper">
                             <img class="icon" src="./img/transfer.svg" alt="Error icon">
@@ -52,23 +59,6 @@
                         </div>
                     </div>
                     <div>
-                        <div class="modal-text-wrapper">
-                            <label for="transaction-from"
-                                   class="account-transaction-modal-11 login-input-label">From</label>
-                            <div class="login-input-grouping">
-                                <select
-                                        id="transaction-from"
-                                        name="sender"
-                                        type="text"
-                                        class="account-input-control"
-                                        autocomplete="off"
-                                        required
-                                >
-                                    <option value="self">Giro</option>
-                                    <option value="ceo">CEO of Unicorn</option>
-                                </select>
-                            </div>
-                        </div>
                         <div class="modal-text-wrapper">
                             <label for="transaction-to"
                                    class="account-transaction-modal-11 login-input-label">To</label>
@@ -81,8 +71,8 @@
                                         autocomplete="off"
                                         required
                                 >
-                                    <option value="savings">Savings Account</option>
-                                    <option value="other">CEO of Unicorn</option>
+                                    <option value="test">TestUser Account</option>
+                                    <option value="cayman">Offshore (Cayman Island)</option>
                                 </select>
                             </div>
                         </div>
@@ -113,11 +103,15 @@
     </form>
 </div>
 
-<div id="transaction-error-non-admin" class="modal-container" aria-labelledby="modal-title" role="dialog" aria-modal="true" hidden="hidden">
+<div id="transaction-error-non-admin" class="modal-container" aria-labelledby="modal-title" role="dialog"
+     aria-modal="true" hidden="hidden">
     <div class="modal-backdrop"></div>
     <div class="modal-screen">
         <div class="modal-wrapper">
             <div class="modal-box">
+                <button type="button" class="modal-button-close" onclick="toggleModal('transaction-error-non-admin')">
+                    <img class="icon" src="./img/close.svg" alt="Close"/>
+                </button>
                 <div>
                     <div class="icon-wrapper modal-color-error">
                         <img class="icon modal-color-error" src="./img/error.svg" alt="Error icon">
@@ -139,11 +133,15 @@
     </div>
 </div>
 
-<div id="transaction-error-overdraft" class="modal-container" aria-labelledby="modal-title" role="dialog" aria-modal="true" hidden="hidden">
+<div id="transaction-error-overdraft" class="modal-container" aria-labelledby="modal-title" role="dialog"
+     aria-modal="true" hidden="hidden">
     <div class="modal-backdrop"></div>
     <div class="modal-screen">
         <div class="modal-wrapper">
             <div class="modal-box">
+                <button type="button" class="modal-button-close" onclick="toggleModal('transaction-error-overdraft')">
+                    <img class="icon" src="./img/close.svg" alt="Close"/>
+                </button>
                 <div>
                     <div class="icon-wrapper modal-color-error">
                         <img class="icon modal-color-error" src="./img/error.svg" alt="Error icon">
@@ -165,7 +163,8 @@
     </div>
 </div>
 
-<div id="transaction-success" class="modal-container" aria-labelledby="modal-title" role="dialog" aria-modal="true" hidden="hidden">
+<div id="transaction-success" class="modal-container" aria-labelledby="modal-title" role="dialog" aria-modal="true"
+     hidden="hidden">
     <div class="modal-backdrop"></div>
     <div class="modal-screen">
         <div class="modal-wrapper">
@@ -193,23 +192,28 @@
 
 <script>
     // document.getElementById("transaction-controls").hidden = !isAdmin();
-    var admin = isAdmin();
+    const admin = isAdmin();
 
-    addTransaction("Netflix", "Entertainment", -25.99, "Feburary 5, 2023");
-    addTransaction("Gehalt", "Income", 2141.57, "Feburary 7, 2023");
-    addTransaction("Mediamarkt", "Shopping", -512.34, "Feburary 7, 2023");
-    addTransaction("Rewe Group", "Groceries", -43.21, "Feburary 7, 2023");
-    addTransaction("Holmes", "Health", -79.99, "Feburary 7, 2023");
-    addTransaction("UBER RECIPT", "Transportation", -29.13, "Feburary 7, 2023");
-    addTransaction("Moneyback", "Cashback", 23.00, "Feburary 7, 2023");
-    addTransaction("Miete", "Living", -958.00, "Feburary 7, 2023");
+    const today = Date.now();
+    const days = (dayCount) => 1000 * 60 * 60 * 24 * dayCount;
+    // @formatter:off
+    addTransaction("Account Open",  "Info",             500.00,     today - days(45));
+    addTransaction("Netflix",       "Entertainment",    -25.99,     today - days(40));
+    addTransaction("Rewe Group",    "Groceries",        -12.20,     today - days(35));
+    addTransaction("Mediamarkt",    "Shopping",         -512.34,    today - days(30));
+    addTransaction("Moneyback",     "Cashback",         23.00,      today - days(29));
+    addTransaction("Easy Rental",   "Living",           -958.00,    today - days(20));
+    addTransaction("UBER Receipt",  "Transportation",   -29.13,     today - days(15));
+    addTransaction("Holmes Place",  "Health",           -79.99,     today - days(10));
+    addTransaction("Rewe Group",    "Groceries",        -43.21,     today - days(5));
+    addTransaction("Salary",        "Income",           2141.57,    today - days(0));
+    // @formatter:on
 
     function transferMoney() {
         let formData = document.forms["transaction"];
-        let sender = formData["sender"].value;
         let receiver = formData["receiver"].value;
         let amount = formData["amount"].value;
-        if (sender === "ceo") {
+        if(amount > cur_amount) {
             if (admin === true) {
                 addTransaction("Transfer from UnicornBank CEO", "Other", amount, "Feburary 15, 2023");
                 return toggleModal('transaction-success');

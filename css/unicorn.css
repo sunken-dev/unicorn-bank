@@ -760,6 +760,7 @@ video {
   display: flex;
   min-height: 100%;
   flex-direction: column;
+  row-gap: 2rem;
 }
 
 .account-section-transaction-header {
@@ -767,7 +768,7 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  --tw-bg-opacity: 0.3;
+  --tw-bg-opacity: 0.8;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 1.25rem;
@@ -799,6 +800,11 @@ video {
 .account-section-transaction-create-2 {
   margin-left: 1rem;
   margin-top: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 .account-section-transaction-create-3 {
@@ -1599,4 +1605,20 @@ video {
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
+}
+
+.logo-small {
+  display: inline;
+  height: 3rem;
+  width: 3rem;
+}
+
+.logo-text {
+  display: inline;
+  vertical-align: middle;
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
 }
