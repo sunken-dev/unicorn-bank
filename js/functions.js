@@ -61,7 +61,7 @@ function transferMoney() {
         return toggleModal('transaction-success');
     } else if(amount > cur_amount) {
         if (admin === true) {
-            addTransaction("Transfer Money", "Other", amount, today);
+            addTransaction("Transfer Money", "Other", amount * -1, today);
             return toggleModal('transaction-success');
         } else {
             return toggleModal('transaction-error-overdraft');
