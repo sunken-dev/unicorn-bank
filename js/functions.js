@@ -121,16 +121,6 @@ function setupGameState(resolve) {
     });
 }
 
-function resetGameState(restart = false) {
-    indexedDB.deleteDatabase("unicorn-bank");
-    localStorage.clear();
-    if(restart === true) {
-        window.location.assign("index.html");
-    } else {
-        window.location.reload();
-    }
-}
-
 let initialTrxs = [{
     name: "Account Open", tags: "Info", value: 50.0, timestamp: today - days(45)
 }, {

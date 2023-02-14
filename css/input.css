@@ -369,3 +369,7 @@
 #finalValue {
     @apply text-indigo-600;
 }
+
+.margin {
+    @apply my-2;
+}

@@ -1686,3 +1686,8 @@ video {
   --tw-text-opacity: 1;
   color: rgb(79 70 229 / var(--tw-text-opacity));
 }
+
+.margin {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
