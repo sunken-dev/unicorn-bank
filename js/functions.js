@@ -52,12 +52,17 @@ function transferMoney() {
     let receiver = formData["receiver"].value;
     let amount = parseInt(formData["amount"].value);
     if (receiver === "test") {
-        addTransaction("Transfer Money to TestUser", "Other", amount * -1, today);
-        addTransaction("Receive Money from TestUser", "Other", amount, today);
+        addTransactions([{
+            name: "Transfer Money to TestUser", tags: "Other", value: amount * -1, timestamp: today
+        }, {
+            name: "Receive Money from TestUser", tags: "Other", value: amount, timestamp: today
+        }]);
         return toggleModal('transaction-success');
     } else if (amount > cur_amount) {
         if (admin === true) {
-            addTransaction("Transfer Money to Offshore", "Other", amount * -1, today);
+            addTransactions([{
+                name: "Transfer Money to Offshore", tags: "Other", value: amount * -1, timestamp: today
+            }]);
             return toggleModal('transaction-success');
         } else {
             return toggleModal('transaction-error-overdraft');
@@ -78,8 +83,7 @@ function setupGameState(resolve) {
     });
     openDb.addEventListener("upgradeneeded", (evt) => {
         const objectStore = evt.target.result.createObjectStore("transactions", {
-            keyPath: "id",
-            autoIncrement: true
+            keyPath: "id", autoIncrement: true
         });
         objectStore.createIndex("name", "name", {});
         objectStore.createIndex("tags", "tags", {});
@@ -101,68 +105,27 @@ function resetGameState() {
     location.reload();
 }
 
-let initialTrxs = [
-    {
-        name: "Account Open",
-        tags: "Info",
-        value: 500.0,
-        timestamp: today - days(45)
-    },
-    {
-        name: "Netflix",
-        tags: "Entertainment",
-        value: -25.99,
-        timestamp: today - days(40)
-    },
-    {
-        name: "Rewe Group",
-        tags: "Groceries",
-        value: -12.20,
-        timestamp: today - days(35)
-    },
-    {
-        name: "Mediamarkt",
-        tags: "Shopping",
-        value: -512.34,
-        timestamp: today - days(30)
-    },
-    {
-        name: "Moneyback",
-        tags: "Cashback",
-        value: 23.00,
-        timestamp: today - days(29)
-    },
-    {
-        name: "Easy Rental",
-        tags: "Living",
-        value: -978.00,
-        timestamp: today - days(20)
-    },
-    {
-        name: "UBER Receipt",
-        tags: "Transportation",
-        value: -29.13,
-        timestamp: today - days(15)
-    },
-    {
-        name: "Holmes Place",
-        tags: "Health",
-        value: -79.99,
-        timestamp: today - days(10)
-    },
-    {
-        name: "Rewe Group",
-        tags: "Groceries",
-        value: -43.21,
-        timestamp: today - days(5)
-    },
-    {
-        name: "Salary",
-        tags: "Income",
-        value: 2141.57,
-        timestamp: today - days(0)
-    },
-];
+let initialTrxs = [{
+    name: "Account Open", tags: "Info", value: 500.0, timestamp: today - days(45)
+}, {
+    name: "Netflix", tags: "Entertainment", value: -25.99, timestamp: today - days(40)
+}, {
+    name: "Rewe Group", tags: "Groceries", value: -12.20, timestamp: today - days(35)
+}, {
+    name: "Mediamarkt", tags: "Shopping", value: -512.34, timestamp: today - days(30)
+}, {
+    name: "Moneyback", tags: "Cashback", value: 23.00, timestamp: today - days(29)
+}, {
+    name: "Easy Rental", tags: "Living", value: -978.00, timestamp: today - days(20)
+}, {
+    name: "UBER Receipt", tags: "Transportation", value: -29.13, timestamp: today - days(15)
+}, {
+    name: "Holmes Place", tags: "Health", value: -79.99, timestamp: today - days(10)
+}, {
+    name: "Rewe Group", tags: "Groceries", value: -43.21, timestamp: today - days(5)
+}, {
+    name: "Salary", tags: "Income", value: 2141.57, timestamp: today - days(0)
+},];
 
 new Promise(function (resolve, reject) {
     setupGameState(resolve)
@@ -186,12 +149,9 @@ function showTransactions(db) {
     });
 }
 
-function addTransaction(name, tags, value, timestamp) {
-    let store = db.transaction(["transactions"], "readwrite").objectStore("transactions");
-    store.add({
-        name: name,
-        tags: tags,
-        value: value,
-        timestamp: timestamp
-    }).addEventListener("success", (evt) => showTransactions(db));
+function addTransactions(trxs) {
+    let transaction = db.transaction(["transactions"], "readwrite");
+    let store = transaction.objectStore("transactions");
+    trxs.forEach((trx, idx) => store.add(trx));
+    transaction.addEventListener("complete", (evt) => showTransactions(db));
 }
