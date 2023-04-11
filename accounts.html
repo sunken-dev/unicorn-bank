@@ -16,7 +16,15 @@
         <div class="account-section-transaction-create-1">
             <div class="account-section-transaction-create-2">
                 <img class="logo-small" src="./img/unicorn-logo.svg" alt="Unicorn Bank Logo" />
-                <h3 class="logo-text">Welcome to Unicorn Bank: TestUser</h3>
+                <h3 class="logo-text">Welcome to Unicorn Bank</h3>
+            </div>
+            <div id="admin-panel" class="account-section-transaction-admin-1" hidden>
+                <button type="button"
+                        class="account-section-transaction-admin-1-btn"
+                        onclick="enableExperimentalMode()"
+                        id="openTransactionModal">
+                    Enable Experimental Mode
+                </button>
             </div>
             <div class="account-section-transaction-create-4">
                 <button type="button"
@@ -45,7 +53,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <div id="transaction-modal" class="modal-container" aria-labelledby="modal-title" role="dialog" aria-modal="true"
@@ -204,5 +211,40 @@
     </div>
 </div>
 
+<div id="experimental-overdraft-dialog" class="modal-container" aria-labelledby="modal-title" role="dialog" aria-modal="true"
+     hidden="hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-screen">
+        <div class="modal-wrapper">
+            <div class="modal-box">
+                <button type="button" class="modal-button-close" onclick="toggleModal('experimental-overdraft-dialog')">
+                    <img class="icon" src="./img/close.svg" alt="Close"/>
+                </button>
+                <div>
+                    <div class="icon-wrapper modal-color-success">
+                        <img class="icon modal-color-success" src="./img/success.svg" alt="Success icon">
+                    </div>
+                    <div class="modal-text-wrapper">
+                        <h3 class="modal-title">Experimental feature enabled!</h3>
+                        <p class="modal-text">The <b>experimental overdraft feature</b> has been enabled!</p>
+                    </div>
+                </div>
+                <div class="modal-button-wrapper">
+                    <button type="button"
+                            class="modal-button-transfer"
+                            onclick="toggleModal('experimental-overdraft-dialog');">
+                        Back to Overview
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    if(isAdmin()) {
+        document.getElementById("admin-panel").removeAttribute("hidden");
+    }
+</script>
 </body>
 </html>

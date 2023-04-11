@@ -5,6 +5,8 @@ function authenticate() {
     // TODO: we will patch this later
     if (username === "TestUser" && password === "!a@s#d$f") {
         window.location.assign(window.atob('Li9hY2NvdW50cy5odG1sP2FkbWluPWZhbHNl'));
+    } else if(username === "admin" && password === "adm1n") {
+        window.location.assign(window.atob('Li9hY2NvdW50cy5odG1sP2FkbWluPXRydWUK'));
     } else {
         toggleModal('sign-in-error');
     }

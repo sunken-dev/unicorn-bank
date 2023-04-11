@@ -6,3 +6,10 @@ function experimentalOverdraftFeature(enabled) {
 
 // Turned off for now as it is still in testing
 experimentalOverdraftFeature(false);
+
+function enableExperimentalMode() {
+    let adminPanel = document.getElementById("admin-panel");
+    adminPanel.setAttribute("hidden", "true");
+    experimentalOverdraftFeature(true);
+    toggleModal('experimental-overdraft-dialog');
+}
