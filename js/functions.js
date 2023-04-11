@@ -144,8 +144,10 @@ let initialTrxs = [{
 },];
 
 new Promise(function (resolve, reject) {
+    console.log("I'm going to setup the transactions, please wait...");
     setupGameState(resolve)
 }).then(() => {
+    console.log("... thank you for your patience!");
     showTransactions(db);
 });
 
