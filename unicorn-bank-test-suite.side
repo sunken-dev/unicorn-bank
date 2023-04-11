@@ -395,6 +395,165 @@
       ],
       "value": "You successfully transferred"
     }]
+  }, {
+    "id": "c7926e9f-7c7a-4836-8612-27589a9bb2ea",
+    "name": "Transfer Own Account",
+    "commands": [{
+      "id": "f608d3ef-9c86-41ae-99e3-f5695ad42dce",
+      "comment": "",
+      "command": "open",
+      "target": "https://unicorn-bank.sunken.dev/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f17ddbfa-ddb0-4939-8212-4993d87940cf",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9066ff8e-835d-4750-b900-b0b7efcd97e9",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "TestUser"
+    }, {
+      "id": "46100904-d0db-4131-a89d-bcbf99dbdfc6",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "!a@s#d$f"
+    }, {
+      "id": "4a31a2ee-95a7-4088-a468-f4b907715c25",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-submit",
+      "targets": [
+        ["css=.login-submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign-in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "65113ebc-5d3c-4060-be99-1cecec4e1fb4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.account-section-transaction-create-4 > #openTransactionModal",
+      "targets": [
+        ["css=.account-section-transaction-create-4 > #openTransactionModal", "css:finder"],
+        ["xpath=(//button[@id='openTransactionModal'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='transaction-controls']/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'New Money Transfer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "50490871-56a9-4d41-b924-a4a980ca8889",
+      "comment": "",
+      "command": "click",
+      "target": "id=transaction-to",
+      "targets": [
+        ["id=transaction-to", "id"],
+        ["name=receiver", "name"],
+        ["css=#transaction-to", "css:finder"],
+        ["xpath=//select[@id='transaction-to']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "02b281b0-44ca-4733-9fe9-b97cc54ff358",
+      "comment": "",
+      "command": "click",
+      "target": "id=transaction-value",
+      "targets": [
+        ["id=transaction-value", "id"],
+        ["name=amount", "name"],
+        ["css=#transaction-value", "css:finder"],
+        ["xpath=//input[@id='transaction-value']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "664bfa89-0af4-4e85-b37e-8b0e283f63d6",
+      "comment": "",
+      "command": "type",
+      "target": "id=transaction-value",
+      "targets": [
+        ["id=transaction-value", "id"],
+        ["name=amount", "name"],
+        ["css=#transaction-value", "css:finder"],
+        ["xpath=//input[@id='transaction-value']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2000.00"
+    }, {
+      "id": "b3ce4b0d-cd7f-4ba6-8dae-09965f90db70",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) > .modal-button-wrapper > .modal-button-transfer",
+      "targets": [
+        ["css=div:nth-child(3) > .modal-button-wrapper > .modal-button-transfer", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Transfer Money')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5d45ea4f-7125-47ad-b2fa-85a9181e054f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=#transaction-success .modal-text",
+      "targets": [
+        ["css=#transaction-success .modal-text", "css:finder"],
+        ["xpath=//div[@id='transaction-success']/div[2]/div/div/div/div[2]/p", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/div/div/div/div[2]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'You successfully transferred the money!')]", "xpath:innerText"]
+      ],
+      "value": "You successfully transferred the money!"
+    }, {
+      "id": "0b01611b-2f42-4506-a296-c710f8278b89",
+      "comment": "",
+      "command": "click",
+      "target": "css=#transaction-success .modal-button-transfer",
+      "targets": [
+        ["css=#transaction-success .modal-button-transfer", "css:finder"],
+        ["xpath=(//button[@type='button'])[9]", "xpath:attributes"],
+        ["xpath=//div[@id='transaction-success']/div[2]/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/div/div/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Back to Overview')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "1e7b9210-6229-4834-ac85-7694c793d453",
