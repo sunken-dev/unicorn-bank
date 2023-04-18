@@ -10,7 +10,8 @@
       ![img_2.png](img_2.png)  
    5. TestUser kann Geld überweisen und erhält eine Erfolgsmeldung  
       ![img_3.png](img_3.png)  
-   6. TestUser kann 100 Euro auf ein Testkonto überweisen und erhält 100 Euro zurück  
+   6. TestUser kann 100 Euro auf ein Testkonto überweisen und erhält 100 Euro zurück
+      Tipp: Es dauert 5 Sekunden bis das Geld zurück überwiesen wird, also kann er Test schon länger dauern beim ausführen
       ![img_4.png](img_4.png)
 
 # (b) Fortgeschritten
