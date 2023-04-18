@@ -770,7 +770,7 @@
     }]
   }, {
     "id": "3bfb1050-1117-4368-a39a-96e472387ad6",
-    "name": "b4 Admin kann 100 Euro auf ein Offshore-Konto überweisen",
+    "name": "b4 Admin kann Geld auf ein Offshore-Konto überweisen",
     "commands": [{
       "id": "158f8bd0-696b-4d31-beaa-2b2cbf3fa551",
       "comment": "",
@@ -834,6 +834,32 @@
       ],
       "value": ""
     }, {
+      "id": "c7e15446-b4f1-43b4-9007-d36690981a56",
+      "comment": "",
+      "command": "click",
+      "target": "id=openTransactionModal",
+      "targets": [
+        ["id=openTransactionModal", "id"],
+        ["css=#admin-panel > #openTransactionModal", "css:finder"],
+        ["xpath=//button[@id='openTransactionModal']", "xpath:attributes"],
+        ["xpath=//div[@id='admin-panel']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Enable Experimental Mode')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec0d7974-b01a-4865-92b8-76167617d79d",
+      "comment": "",
+      "command": "click",
+      "target": "css=#experimental-overdraft-dialog .modal-button-transfer",
+      "targets": [
+        ["css=#experimental-overdraft-dialog .modal-button-transfer", "css:finder"],
+        ["xpath=(//button[@type='button'])[11]", "xpath:attributes"],
+        ["xpath=//div[@id='experimental-overdraft-dialog']/div[2]/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[6]/div[2]/div/div/div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
       "id": "09011420-5f95-4be6-a369-da28da0bc529",
       "comment": "",
       "command": "click",
@@ -881,18 +907,16 @@
       ],
       "value": ""
     }, {
-      "id": "b2726969-10bf-4ade-bd5e-211830774cad",
+      "id": "4db01a49-2749-4fb4-bb21-cec857e98676",
       "comment": "",
       "command": "assertText",
-      "target": "id=finalValue",
+      "target": "css=p:nth-child(1)",
       "targets": [
-        ["id=finalValue", "id"],
-        ["css=#finalValue", "css:finder"],
-        ["xpath=//p[@id='finalValue']", "xpath:attributes"],
-        ["xpath=//p[2]", "xpath:position"],
-        ["xpath=//p[contains(.,'100,00 €')]", "xpath:innerText"]
+        ["css=p:nth-child(1)", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'You successfully transferred')]", "xpath:innerText"]
       ],
-      "value": "100,00 €"
+      "value": "You successfully transferred"
     }, {
       "id": "7152ed1d-b3e4-4674-ab01-a35022f38de3",
       "comment": "",
