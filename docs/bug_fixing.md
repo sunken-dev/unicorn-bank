@@ -22,7 +22,7 @@
    ![img_5.png](img_5.png)
 3. TestUser sollte die rote experimentelle Schaltfläche nicht sehen  
    Jene rote Schaltfläche die der Admin ganz oben auf der Übersichtseite aller Transaktionen hat, sollte beim TestUser nicht sichtbar sein
-4. Admin kann 100 Euro auf ein Offshore-Konto überweisen  
+4. Admin kann Geld auf ein Offshore-Konto überweisen (Betrag ist hier egal) 
    ![img_6.png](img_6.png)
 5. Admin sieht den korrekten Betrag auf dem Erfolgsbildschirm, nachdem er Geld auf das Offshore-Konto überwiesen hat  
    ![img_7.png](img_7.png)
