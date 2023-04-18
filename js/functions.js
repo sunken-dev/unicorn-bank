@@ -21,7 +21,7 @@ function isAdmin() {
 let admin = isAdmin();
 let overdraft = false
 const formatter = new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'EUR'});
-let cur_amount = 0;
+let currentAmount = 0;
 
 const today = Date.now();
 const days = (dayCount) => 1000 * 60 * 60 * 24 * dayCount;
@@ -29,7 +29,7 @@ const days = (dayCount) => 1000 * 60 * 60 * 24 * dayCount;
 function showTransaction(name, tags, value, timestamp) {
     const trx = document.createElement("li");
     let valueFg = (value < 0) ? "account-transaction-negative" : "account-transaction-positive";
-    cur_amount += value;
+    currentAmount += value;
     trx.innerHTML = `
         <div class="account-transaction-1">
             <div class="account-transaction-2">
@@ -50,14 +50,13 @@ function showTransaction(name, tags, value, timestamp) {
     let trxs = document.getElementById("transactions");
     trxs.prepend(trx);
     let currentBalance = document.getElementById('current-balance');
-    let balanceClass = (cur_amount < 0) ? "account-transaction-negative" : "account-transaction-positive";
+    let balanceClass = (currentAmount < 0) ? "account-transaction-negative" : "account-transaction-positive";
     currentBalance.className = "account-transaction-4 " + balanceClass + " chunky";
     // TODO set balance to 0 for admin
     // if (isAdmin()) {
-    //     cur_amount = 0;
+    //     currentAmount = 0;
     // }
-    let formattedBalance = formatter.format(cur_amount)
-    currentBalance.innerHTML = formattedBalance;
+    currentBalance.innerHTML = formatter.format(currentAmount);
 }
 
 function transferMoney() {
@@ -65,7 +64,7 @@ function transferMoney() {
     let receiver = formData["receiver"].value;
     let amount = parseInt(formData["amount"].value);
     if (receiver === "test") {
-        if (amount > cur_amount && overdraft === false) {
+        if (amount > currentAmount && overdraft === false) {
             return toggleModal('transaction-error-no-overdraft');
         }
         addTransactions([{
@@ -78,7 +77,7 @@ function transferMoney() {
         toggleModal('transaction-modal');
         return toggleModal('transaction-success');
     } else if (admin === true) {
-        if (amount > cur_amount && overdraft === false) {
+        if (amount > currentAmount && overdraft === false) {
             return toggleModal('transaction-error-no-overdraft');
         }
         addTransactions([{
@@ -151,7 +150,7 @@ function showTransactions(db) {
     let old = document.getElementById("transactions");
     if (old) {
         old.innerHTML = '';
-        cur_amount = 0;
+        currentAmount = 0;
     }
     let store = db.transaction("transactions").objectStore("transactions");
     store.openCursor().addEventListener("success", (evt) => {
