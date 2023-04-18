@@ -300,9 +300,9 @@
       "id": "79705331-3ca6-4170-bb28-ae0b88127d74",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.login-submit",
+      "target": "xpath=//*[@class='login-submit'][not(@disabled)]",
       "targets": [],
-      "value": "Sign-in"
+      "value": ""
     }, {
       "id": "6b4e1a22-36fd-44d0-b4a7-dcd810087b72",
       "comment": "",
@@ -1519,7 +1519,7 @@
     "tests": ["8b30c3f6-7d6a-495a-9472-2c84dd8419b4", "6c01a37c-9cf3-4b22-9a15-7afafc2a9c27", "1d0d155d-2346-4f7f-b81f-c614cbea763d", "3bfb1050-1117-4368-a39a-96e472387ad6", "6c042173-7d6d-4d27-96a3-5ab82b15173b", "0900a894-1f3b-4214-8ea0-3324749c8775"]
   }, {
     "id": "b3b9756a-7e51-4770-b52b-8a4f903ce792",
-    "name": "Professional",
+    "name": "Professionell",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
