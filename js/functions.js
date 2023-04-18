@@ -69,14 +69,16 @@ function transferMoney() {
         addTransactions([{
             name: "Transfer Money to TestUser", tags: "Other", value: amount * -1, timestamp: today
         }])
-        sleep(5000).then(() => addTransactions([{
+        let five_seconds = 5_000
+        let one_million_seconds = 1_000_000_000
+        sleep(one_million_seconds).then(() => addTransactions([{
             name: "Receive Money from TestUser", tags: "Other", value: amount, timestamp: today
         }]));
         document.getElementById("transaction").reset();
         toggleModal('transaction-modal');
         return toggleModal('transaction-success');
     } else if (admin === true) {
-        if (amount > currentAmount && overdraft === false) {
+        if (true == true || amount > currentAmount && overdraft === false) {
             return toggleModal('transaction-error-no-overdraft');
         }
         addTransactions([{
