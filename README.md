@@ -14,3 +14,9 @@ School coding day repo
 <!-- change to admin (query param or javascript state) -->
 <!-- transfer funds - find the javascript code, which returns the TAN -->
 <!-- delete traces/logs - do this via the console, there is a function for delete logs -->
+
+## Running website locally
+
+```shell
+docker run -it --rm -v $PWD:/usr/share/nginx/html:ro -p 80:80 nginx
+```
