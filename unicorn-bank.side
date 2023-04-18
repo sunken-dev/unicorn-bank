@@ -5,7 +5,7 @@
   "url": "http://localhost/reset.html",
   "tests": [{
     "id": "038a68d5-e54a-40b7-aa0a-2cd88da530ed",
-    "name": "User can login",
+    "name": "a2 TestUser kann sich anmelden",
     "commands": [{
       "id": "5294cf91-6ef9-4c88-8f6f-5d6c119bba9d",
       "comment": "",
@@ -75,7 +75,7 @@
     }]
   }, {
     "id": "8b30c3f6-7d6a-495a-9472-2c84dd8419b4",
-    "name": "Admin can login",
+    "name": "b1 Admin kann sich anmelden",
     "commands": [{
       "id": "50da6e69-7cb5-42c4-ba86-ee13fffc0a0f",
       "comment": "",
@@ -145,7 +145,7 @@
     }]
   }, {
     "id": "702345cc-8748-4013-a3f4-b2af2a2008fa",
-    "name": "User can see 'Netflix' transaction with -25.99 Euro",
+    "name": "a4 TestUser kann die Transaktion \"Netflix\" mit \"-25,99\" Euro sehen",
     "commands": [{
       "id": "d9e5b3e3-57ee-4e8b-9ca9-a128c66a243f",
       "comment": "",
@@ -222,7 +222,7 @@
     }]
   }, {
     "id": "1d0d155d-2346-4f7f-b81f-c614cbea763d",
-    "name": "User should not see red Experimental Button",
+    "name": "b3 TestUser sollte die rote experimentelle Schaltfläche nicht sehen",
     "commands": [{
       "id": "af7aa796-6c82-4b17-8b49-34efc9e44397",
       "comment": "",
@@ -288,7 +288,7 @@
     }]
   }, {
     "id": "d7d19be8-015c-4c35-b73b-1c39eb7ec528",
-    "name": "Login button is clickable",
+    "name": "a1 Login Schaltfläche ist klickbar",
     "commands": [{
       "id": "3bbb583f-0099-49d8-81d2-d4e9deddbde5",
       "comment": "",
@@ -313,12 +313,12 @@
     }]
   }, {
     "id": "3634cdff-7a8d-41a4-958a-ad893117d3c8",
-    "name": "Login error shows correct text",
+    "name": "a3 Falsche Login Daten zeigt Fehler mit Text an",
     "commands": [{
       "id": "79a0062d-8441-4b30-a5ef-14c296141bb6",
       "comment": "",
       "command": "open",
-      "target": "http://localhost/index.html",
+      "target": "/reset.html",
       "targets": [],
       "value": ""
     }, {
@@ -367,7 +367,7 @@
     }]
   }, {
     "id": "12fa2760-7853-4f51-9a93-e4474f00e7b3",
-    "name": "Unicorn bank logo is showing in the top left on the transaction overview",
+    "name": "c3 Das Unicorn Bank Logo wird links oben als Bild mit einem Pferd angezeigt",
     "commands": [{
       "id": "e5658268-f757-40dc-bf1a-5aeaed955d23",
       "comment": "",
@@ -433,7 +433,7 @@
     }]
   }, {
     "id": "589c652b-d591-49ab-8a9f-f3924bf28d9d",
-    "name": "Transaction categories are singular not plural",
+    "name": "c2 Transaktionskategorien sind Singular, nicht Plural",
     "commands": [{
       "id": "205763f2-5c04-4080-ac9e-d9fb3b889f5f",
       "comment": "",
@@ -504,7 +504,7 @@
     }]
   }, {
     "id": "f608f988-c931-4761-800b-619cbea07fee",
-    "name": "User can transfer money and gets a success message",
+    "name": "a5 TestUser kann Geld überweisen und erhält eine Erfolgsmeldung",
     "commands": [{
       "id": "512e2e93-277f-41de-97c6-75f79ed12b01",
       "comment": "",
@@ -624,7 +624,7 @@
     }]
   }, {
     "id": "ad0bc4ea-a45e-4fc2-affd-ca3a192744c6",
-    "name": "User can transfer 100 Euro to test account and gets 100 Euro back",
+    "name": "a6 TestUser kann 100 Euro auf ein Testkonto überweisen und erhält 100 Euro zurück",
     "commands": [{
       "id": "349efa64-4a00-4759-9489-ba62c5166b6b",
       "comment": "",
@@ -770,7 +770,7 @@
     }]
   }, {
     "id": "3bfb1050-1117-4368-a39a-96e472387ad6",
-    "name": "Admin can send 100 Euro to offshore account",
+    "name": "b4 Admin kann 100 Euro auf ein Offshore-Konto überweisen",
     "commands": [{
       "id": "158f8bd0-696b-4d31-beaa-2b2cbf3fa551",
       "comment": "",
@@ -903,7 +903,7 @@
     }]
   }, {
     "id": "03e9e7e2-e463-4fad-a529-ef6ee9f24224",
-    "name": "Admin sees correctly calculated balances on transaction overview",
+    "name": "c1 Admin sieht die Summe aller Transaktionen auf der Übersicht",
     "commands": [{
       "id": "7d4ef874-5cfa-42d6-80d7-588d1fe375b0",
       "comment": "",
@@ -975,7 +975,7 @@
     }]
   }, {
     "id": "0900a894-1f3b-4214-8ea0-3324749c8775",
-    "name": "Admin can send more money than he has with overdraft feature",
+    "name": "b6 Admin kann mit der Überbeziehungsfunktion mehr Geld senden als er hat",
     "commands": [{
       "id": "f95a65d2-7829-47e2-b93b-7f3f2dd1c891",
       "comment": "",
@@ -1207,7 +1207,7 @@
     }]
   }, {
     "id": "6c01a37c-9cf3-4b22-9a15-7afafc2a9c27",
-    "name": "Admin can see red experimental button",
+    "name": "b2 Admin kann eine rote experimentelle Schaltfläche sehen",
     "commands": [{
       "id": "e05e7e73-d12d-4488-a425-063e298366ba",
       "comment": "",
@@ -1280,7 +1280,7 @@
     }]
   }, {
     "id": "6c042173-7d6d-4d27-96a3-5ab82b15173b",
-    "name": "Admin sees correct amount on success screen after sending money to offshore account",
+    "name": "b5 Admin sieht den korrekten Betrag auf dem Erfolgsbildschirm, nachdem er Geld auf das Offshore-Konto überwiesen hat",
     "commands": [{
       "id": "b014307c-c364-43ba-b7a8-e79cddf78ed5",
       "comment": "",
@@ -1503,7 +1503,28 @@
       "value": ""
     }]
   }],
-  "suites": [],
+  "suites": [{
+    "id": "ae6691a3-19b6-4a40-8a6e-47a6cae6d972",
+    "name": "Anfänger",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d7d19be8-015c-4c35-b73b-1c39eb7ec528", "038a68d5-e54a-40b7-aa0a-2cd88da530ed", "3634cdff-7a8d-41a4-958a-ad893117d3c8", "702345cc-8748-4013-a3f4-b2af2a2008fa", "f608f988-c931-4761-800b-619cbea07fee", "ad0bc4ea-a45e-4fc2-affd-ca3a192744c6"]
+  }, {
+    "id": "b0e71a47-e72e-4eef-9c73-a52f58ae6c7e",
+    "name": "Fortgeschritten",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["8b30c3f6-7d6a-495a-9472-2c84dd8419b4", "6c01a37c-9cf3-4b22-9a15-7afafc2a9c27", "1d0d155d-2346-4f7f-b81f-c614cbea763d", "3bfb1050-1117-4368-a39a-96e472387ad6", "6c042173-7d6d-4d27-96a3-5ab82b15173b", "0900a894-1f3b-4214-8ea0-3324749c8775"]
+  }, {
+    "id": "b3b9756a-7e51-4770-b52b-8a4f903ce792",
+    "name": "Professional",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["03e9e7e2-e463-4fad-a529-ef6ee9f24224", "589c652b-d591-49ab-8a9f-f3924bf28d9d", "12fa2760-7853-4f51-9a93-e4474f00e7b3"]
+  }],
   "urls": ["http://localhost/", "http://localhost/reset.html"],
   "plugins": []
 }
