@@ -15,16 +15,16 @@
     <div id="transaction-controls" class="account-section-transaction-header">
         <div class="account-section-transaction-create-1">
             <div class="account-section-transaction-create-2">
-<!--              TODO: broken src path, medium -->
-                <img class="logo-small" src="./img/unicorn-logo.svg" alt="Unicorn Bank Logo" />
+                <img class="logo-small" src="./img/unicorns-logo.svg" alt="Unicorn Bank Logo" />
                 <h3 class="logo-text">Welcome to Unicorn Bank</h3>
             </div>
             <div id="admin-panel" class="account-section-transaction-admin-1" hidden>
-<!--                TODO disabled and add typo to onclick, advanced-->
                 <button type="button"
                         class="account-section-transaction-admin-1-btn"
-                        onclick="enableExperimentalMode()"
-                        id="openTransactionModal">
+                        onclick="eenableExperimentalMode()"
+                        id="openTransactionModal"
+                        disabled
+                >
                     Enable Experimental Mode
                 </button>
             </div>
@@ -244,7 +244,7 @@
 </div>
 
 <script>
-    if(isAdmin()) { // TODO === false, advanced
+    if(isAdmin() === false) {
         document.getElementById("admin-panel").removeAttribute("hidden");
     }
 </script>

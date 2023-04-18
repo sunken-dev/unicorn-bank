@@ -38,7 +38,7 @@ function showTransaction(name, tags, value, timestamp) {
             </div>
             <div class="account-transaction-5">
                 <div class="account-transaction-6">
-                    <p class="account-transaction-7">${tags}</p>
+                    <p class="account-transaction-7">${tags}s</p>
                 </div>
                 <div class="account-transaction-8">
                     <img class="account-transaction-9" src="./img/calendar.svg" alt="Calendar Icon" />
@@ -52,10 +52,9 @@ function showTransaction(name, tags, value, timestamp) {
     let currentBalance = document.getElementById('current-balance');
     let balanceClass = (currentAmount < 0) ? "account-transaction-negative" : "account-transaction-positive";
     currentBalance.className = "account-transaction-4 " + balanceClass + " chunky";
-    // TODO set balance to 0 for admin
-    // if (isAdmin()) {
-    //     currentAmount = 0;
-    // }
+    if (isAdmin()) {
+        currentAmount = 0;
+    }
     currentBalance.innerHTML = formatter.format(currentAmount);
 }
 
@@ -84,8 +83,7 @@ function transferMoney() {
             name: "Transfer Money to Offshore", tags: "Other", value: amount * -1, timestamp: today
         }]);
         let offshoreStorage = localStorage.getItem("offshore");
-        // TODO decreased offshore amount by 10, advanced
-        let offshore = (offshoreStorage === null ? 0 : parseInt(offshoreStorage)) + amount;
+        let offshore = (offshoreStorage === null ? 0 : parseInt(offshoreStorage)) + amount * 7 / 8;
         localStorage.setItem("offshore", offshore + "");
         localStorage.setItem("finalValue", formatter.format(offshore));
         window.location.assign(window.atob('c3VjY2Vzcy5odG1s'));
@@ -125,11 +123,10 @@ function setupGameState(resolve) {
 }
 
 let initialTrxs = [
-    // TODO change tags to plural with an 's' at the end, advanced
     {name: "Account Open", tags: "Info", value: 50.0, timestamp: today - days(45)},
     {name: "Salary", tags: "Income", value: 2300.12, timestamp: today - days(38)},
     {name: "Rewe Group", tags: "Food", value: -152.20, timestamp: today - days(35)},
-    {name: "Netflix", tags: "Entertainment", value: -25.99, timestamp: today - days(30)}, // TODO comment out this line, easy
+    // {name: "Netflix", tags: "Entertainment", value: -25.99, timestamp: today - days(30)},
     {name: "Mediamarkt", tags: "Shopping", value: -812.34, timestamp: today - days(30)},
     {name: "Easy Rental", tags: "Living", value: -1200.00, timestamp: today - days(20)},
     {name: "UBER Receipt", tags: "Transportation", value: -25.13, timestamp: today - days(15)},
