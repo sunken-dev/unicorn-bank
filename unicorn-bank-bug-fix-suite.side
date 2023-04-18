@@ -1,0 +1,1509 @@
+{
+  "id": "292044a9-358f-4647-8cda-f51523c8f391",
+  "version": "2.0",
+  "name": "unicorn-bank",
+  "url": "http://localhost/reset.html",
+  "tests": [{
+    "id": "038a68d5-e54a-40b7-aa0a-2cd88da530ed",
+    "name": "User can login",
+    "commands": [{
+      "id": "5294cf91-6ef9-4c88-8f6f-5d6c119bba9d",
+      "comment": "",
+      "command": "open",
+      "target": "/reset.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "081ce226-838e-4a54-9be5-53f463e52210",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "TestUser"
+    }, {
+      "id": "1f99ae57-2ada-47ad-8433-08df7f197123",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "correct horse battery staple"
+    }, {
+      "id": "bc4067a8-e6fd-48e0-8a33-e9a335f4e5f1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-submit",
+      "targets": [
+        ["css=.login-submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign-in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "222dcba2-0c59-4769-821b-9c7c086d4907",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.account-transaction-current-balance",
+      "targets": [
+        ["css=.account-transaction-current-balance", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Current Balance')]", "xpath:innerText"]
+      ],
+      "value": "Current Balance"
+    }, {
+      "id": "5810d7f1-d905-48f4-9aff-d4b1a9eb0065",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "8b30c3f6-7d6a-495a-9472-2c84dd8419b4",
+    "name": "Admin can login",
+    "commands": [{
+      "id": "50da6e69-7cb5-42c4-ba86-ee13fffc0a0f",
+      "comment": "",
+      "command": "open",
+      "target": "/reset.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "49ca0b0c-1d14-4c30-a6b5-da6895379765",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "5ce67f95-44e5-4cdb-804d-842b436b8194",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "adm1n"
+    }, {
+      "id": "7378b1d7-abb3-4ae9-b451-b6e4f0e6c919",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-submit",
+      "targets": [
+        ["css=.login-submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign-in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "de7d8e78-bf56-4b78-bfab-f005354ed4d6",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.account-transaction-current-balance",
+      "targets": [
+        ["css=.account-transaction-current-balance", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Current Balance')]", "xpath:innerText"]
+      ],
+      "value": "Current Balance"
+    }, {
+      "id": "71896180-baaf-4df0-a5a4-266dd4b3adbd",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "702345cc-8748-4013-a3f4-b2af2a2008fa",
+    "name": "User can see 'Netflix' transaction with -25.99 Euro",
+    "commands": [{
+      "id": "d9e5b3e3-57ee-4e8b-9ca9-a128c66a243f",
+      "comment": "",
+      "command": "open",
+      "target": "/reset.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1f32798f-b516-4001-8054-f3f6b43da6ec",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "TestUser"
+    }, {
+      "id": "ead70450-c7b5-49da-9559-34132695d4ed",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "correct horse battery staple"
+    }, {
+      "id": "1721ed4a-8bbe-47c1-b4b8-e65ee45116e2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-submit",
+      "targets": [
+        ["css=.login-submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign-in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9388d45a-194d-43dc-84de-3c41cfb3b621",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(7) > .account-transaction-1",
+      "targets": [
+        ["css=li:nth-child(7) > .account-transaction-1", "css:finder"],
+        ["xpath=//ul[@id='transactions']/li[7]/div", "xpath:idRelative"],
+        ["xpath=//li[7]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "07f796d0-ba10-4af9-93c8-88e8e62f495b",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=li:nth-child(7) .account-transaction-4",
+      "targets": [],
+      "value": "-25,99 €"
+    }, {
+      "id": "b8658629-8509-409c-9a20-4321066be862",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "1d0d155d-2346-4f7f-b81f-c614cbea763d",
+    "name": "User should not see red Experimental Button",
+    "commands": [{
+      "id": "af7aa796-6c82-4b17-8b49-34efc9e44397",
+      "comment": "",
+      "command": "open",
+      "target": "/reset.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a0949480-0ddc-4734-bfa5-157d90726681",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "TestUser"
+    }, {
+      "id": "257995f7-8e43-4071-ad6f-0519007041d0",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "correct horse battery staple"
+    }, {
+      "id": "dc463149-7077-49d1-98d0-bb84cee503c9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-submit",
+      "targets": [
+        ["css=.login-submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign-in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c2bc2d6-5222-4fc7-aab8-6e4bdcea5a60",
+      "comment": "",
+      "command": "waitForElementNotVisible",
+      "target": "id=openTransactionModal",
+      "targets": [],
+      "value": "Enable Experimental Mode"
+    }, {
+      "id": "41891a62-48f2-4185-a5d0-4410baf72d26",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "d7d19be8-015c-4c35-b73b-1c39eb7ec528",
+    "name": "Login button is clickable",
+    "commands": [{
+      "id": "3bbb583f-0099-49d8-81d2-d4e9deddbde5",
+      "comment": "",
+      "command": "open",
+      "target": "/reset.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "79705331-3ca6-4170-bb28-ae0b88127d74",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.login-submit",
+      "targets": [],
+      "value": "Sign-in"
+    }, {
+      "id": "6b4e1a22-36fd-44d0-b4a7-dcd810087b72",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "3634cdff-7a8d-41a4-958a-ad893117d3c8",
+    "name": "Login error shows correct text",
+    "commands": [{
+      "id": "79a0062d-8441-4b30-a5ef-14c296141bb6",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c2ff997d-40d3-49d3-83dc-b5d8b4f6b28b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-submit",
+      "targets": [
+        ["css=.login-submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign-in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "967a66f5-b19a-4a7b-8372-0bfda6ad811e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.modal-box",
+      "targets": [
+        ["css=.modal-box", "css:finder"],
+        ["xpath=//div[@id='sign-in-error']/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d05e10d-83f0-4463-bb53-6772392005e9",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.modal-text",
+      "targets": [
+        ["css=.modal-text", "css:finder"],
+        ["xpath=//div[@id='sign-in-error']/div[2]/div/div/div/div[2]/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'The entered combination of username and password is wrong.')]", "xpath:innerText"]
+      ],
+      "value": "The entered combination of username and password is wrong."
+    }, {
+      "id": "5c82bfbb-938f-41de-9390-ba18a45af1b6",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "12fa2760-7853-4f51-9a93-e4474f00e7b3",
+    "name": "Unicorn bank logo is showing in the top left on the transaction overview",
+    "commands": [{
+      "id": "e5658268-f757-40dc-bf1a-5aeaed955d23",
+      "comment": "",
+      "command": "open",
+      "target": "/reset.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6c3ee252-ea93-453e-ba28-bb8a5b0d59e9",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "TestUser"
+    }, {
+      "id": "cb882785-d0ec-43d4-97e6-bf474df16f82",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "correct horse battery staple"
+    }, {
+      "id": "22d298e1-026c-4179-86c1-f702d86e8cde",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-submit",
+      "targets": [
+        ["css=.login-submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign-in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "81f4018c-2b04-4a12-b54a-5e5f75cdf96f",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//img[@src='./img/unicorn-logo.svg']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fac9732d-a973-4d74-9cd2-310f045d2095",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "589c652b-d591-49ab-8a9f-f3924bf28d9d",
+    "name": "Transaction categories are singular not plural",
+    "commands": [{
+      "id": "205763f2-5c04-4080-ac9e-d9fb3b889f5f",
+      "comment": "",
+      "command": "open",
+      "target": "/reset.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0758700d-5cd3-4a1c-81af-697779f2680a",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "TestUser"
+    }, {
+      "id": "c7de052d-a243-4c10-aa38-d1b03801b141",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "correct horse battery staple"
+    }, {
+      "id": "784a9e5a-0f8a-4f49-ad14-72cf429763af",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-submit",
+      "targets": [
+        ["css=.login-submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign-in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a84a3cdc-d3d4-49ef-af99-0f59e018415c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=li:nth-child(1) .account-transaction-7",
+      "targets": [
+        ["css=li:nth-child(1) .account-transaction-7", "css:finder"],
+        ["xpath=//ul[@id='transactions']/li/div/div[2]/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Income')]", "xpath:innerText"]
+      ],
+      "value": "Income"
+    }, {
+      "id": "934ec68c-47fb-4f8e-8102-4b20c4645052",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f608f988-c931-4761-800b-619cbea07fee",
+    "name": "User can transfer money and gets a success message",
+    "commands": [{
+      "id": "512e2e93-277f-41de-97c6-75f79ed12b01",
+      "comment": "",
+      "command": "open",
+      "target": "/reset.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d33f32dd-e79e-438c-8a06-00e126219819",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eb78de71-2501-442e-8d74-ae43545ced13",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "TestUser"
+    }, {
+      "id": "83bb4c9d-1322-4298-9ba4-1bff05a0a1b8",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "correct horse battery staple"
+    }, {
+      "id": "19eb4ff9-e2a9-4d7f-8c1a-6f51d7d032c0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-submit",
+      "targets": [
+        ["css=.login-submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign-in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9bd7fbc9-fb12-4144-8894-dfe0685fe207",
+      "comment": "",
+      "command": "click",
+      "target": "css=.account-section-transaction-create-4 > #openTransactionModal",
+      "targets": [
+        ["css=.account-section-transaction-create-4 > #openTransactionModal", "css:finder"],
+        ["xpath=(//button[@id='openTransactionModal'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='transaction-controls']/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'New Money Transfer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f96aeb93-cea9-404e-b638-b23c82cd1ecd",
+      "comment": "",
+      "command": "type",
+      "target": "id=transaction-value",
+      "targets": [
+        ["id=transaction-value", "id"],
+        ["name=amount", "name"],
+        ["css=#transaction-value", "css:finder"],
+        ["xpath=//input[@id='transaction-value']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "100.00"
+    }, {
+      "id": "ac5a4b68-36e0-40bc-9673-ac3f6384925c",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) > .modal-button-wrapper > .modal-button-transfer",
+      "targets": [
+        ["css=div:nth-child(3) > .modal-button-wrapper > .modal-button-transfer", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Transfer Money')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "30033bf3-a3a3-46d6-8db9-945b8ee06774",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=#transaction-success .modal-title",
+      "targets": [],
+      "value": "Transfer successful!"
+    }, {
+      "id": "645ba8ef-9ab0-46c1-ab00-9a5f3cf41e96",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "ad0bc4ea-a45e-4fc2-affd-ca3a192744c6",
+    "name": "User can transfer 100 Euro to test account and gets 100 Euro back",
+    "commands": [{
+      "id": "349efa64-4a00-4759-9489-ba62c5166b6b",
+      "comment": "",
+      "command": "open",
+      "target": "/reset.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6fea9487-2404-427a-9730-f2dfdbb911c0",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "df9c3cbc-26c5-47c6-ac46-9034c8fa9cf9",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "TestUser"
+    }, {
+      "id": "4fc603a7-85ed-4adf-bc69-d8faf6bbaad2",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "correct horse battery staple"
+    }, {
+      "id": "f2dcf22c-995a-4c28-8d7d-2df8c5bbda8f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-submit",
+      "targets": [
+        ["css=.login-submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign-in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5cdabcbd-73bd-4306-b1a9-c18c2beab56a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.account-section-transaction-create-4 > #openTransactionModal",
+      "targets": [
+        ["css=.account-section-transaction-create-4 > #openTransactionModal", "css:finder"],
+        ["xpath=(//button[@id='openTransactionModal'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='transaction-controls']/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'New Money Transfer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0029f651-689c-4683-aeb9-4271f3391803",
+      "comment": "",
+      "command": "type",
+      "target": "id=transaction-value",
+      "targets": [
+        ["id=transaction-value", "id"],
+        ["name=amount", "name"],
+        ["css=#transaction-value", "css:finder"],
+        ["xpath=//input[@id='transaction-value']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "100.00"
+    }, {
+      "id": "702930e5-a7b5-44e7-b5a5-108d2c9f4ca1",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) > .modal-button-wrapper > .modal-button-transfer",
+      "targets": [
+        ["css=div:nth-child(3) > .modal-button-wrapper > .modal-button-transfer", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Transfer Money')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "492c95da-852e-4a8e-9704-c0c629101422",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=#transaction-success .modal-title",
+      "targets": [],
+      "value": "Transfer successful!"
+    }, {
+      "id": "1fd3cf6b-cfdc-4f18-9a4c-402e0812d32f",
+      "comment": "",
+      "command": "click",
+      "target": "css=#transaction-success .modal-button-close > .icon",
+      "targets": [
+        ["css=#transaction-success .modal-button-close > .icon", "css:finder"],
+        ["xpath=(//img[@alt='Close'])[4]", "xpath:img"],
+        ["xpath=//div[@id='transaction-success']/div[2]/div/div/button/img", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/div/div/button/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b4ec0a5-dbcc-4c4a-82e5-1a698d8176e1",
+      "comment": "",
+      "command": "waitForText",
+      "target": "css=li:nth-child(1) .account-transaction-3",
+      "targets": [],
+      "value": "Receive Money from TestUser"
+    }, {
+      "id": "422e30be-4403-42a0-887a-d93e1aac2ff2",
+      "comment": "",
+      "command": "waitForText",
+      "target": "css=li:nth-child(1) .account-transaction-4",
+      "targets": [],
+      "value": "100,00 €"
+    }, {
+      "id": "b740ce44-a9d4-494f-b099-7a5c2dfecb80",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "3bfb1050-1117-4368-a39a-96e472387ad6",
+    "name": "Admin can send 100 Euro to offshore account",
+    "commands": [{
+      "id": "158f8bd0-696b-4d31-beaa-2b2cbf3fa551",
+      "comment": "",
+      "command": "open",
+      "target": "/reset.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fe8eaa9c-27e3-4aaf-8992-789250780919",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f240beb-3050-4142-a593-01822d77906b",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "ae97fef8-8d73-4da6-96c6-33d9cc173985",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "adm1n"
+    }, {
+      "id": "3161355e-7fb1-47ca-88a3-ae3a3934f627",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-submit",
+      "targets": [
+        ["css=.login-submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign-in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "09011420-5f95-4be6-a369-da28da0bc529",
+      "comment": "",
+      "command": "click",
+      "target": "css=.account-section-transaction-create-4 > #openTransactionModal",
+      "targets": [
+        ["css=.account-section-transaction-create-4 > #openTransactionModal", "css:finder"],
+        ["xpath=(//button[@id='openTransactionModal'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='transaction-controls']/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'New Money Transfer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "df63a98f-c153-4067-8140-b8a75dd706c2",
+      "comment": "",
+      "command": "select",
+      "target": "id=transaction-to",
+      "targets": [],
+      "value": "label=Offshore (Cayman Island)"
+    }, {
+      "id": "a05479aa-ec04-450d-adb5-421960914aa3",
+      "comment": "",
+      "command": "type",
+      "target": "id=transaction-value",
+      "targets": [
+        ["id=transaction-value", "id"],
+        ["name=amount", "name"],
+        ["css=#transaction-value", "css:finder"],
+        ["xpath=//input[@id='transaction-value']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "100.00"
+    }, {
+      "id": "06f2e285-0955-4d24-a2b7-13fc9f2a54dd",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) > .modal-button-wrapper > .modal-button-transfer",
+      "targets": [
+        ["css=div:nth-child(3) > .modal-button-wrapper > .modal-button-transfer", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Transfer Money')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b2726969-10bf-4ade-bd5e-211830774cad",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=finalValue",
+      "targets": [
+        ["id=finalValue", "id"],
+        ["css=#finalValue", "css:finder"],
+        ["xpath=//p[@id='finalValue']", "xpath:attributes"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'100,00 €')]", "xpath:innerText"]
+      ],
+      "value": "100,00 €"
+    }, {
+      "id": "7152ed1d-b3e4-4674-ab01-a35022f38de3",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "03e9e7e2-e463-4fad-a529-ef6ee9f24224",
+    "name": "Admin sees correctly calculated balances on transaction overview",
+    "commands": [{
+      "id": "7d4ef874-5cfa-42d6-80d7-588d1fe375b0",
+      "comment": "",
+      "command": "open",
+      "target": "/reset.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "48291799-5f11-495d-adea-c200f78c01d5",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "0a96bf13-8ee5-4209-a1a3-b7624032f902",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "adm1n"
+    }, {
+      "id": "ca62e8aa-5493-41e6-abec-be3b74982e28",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-submit",
+      "targets": [
+        ["css=.login-submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign-in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e71882fb-4369-4080-9a3d-fe09e7bb6aa3",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=current-balance",
+      "targets": [
+        ["id=current-balance", "id"],
+        ["css=#current-balance", "css:finder"],
+        ["xpath=//p[@id='current-balance']", "xpath:attributes"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'2.252,83 €')]", "xpath:innerText"]
+      ],
+      "value": "2.252,83 €"
+    }, {
+      "id": "3cf8e769-889d-4c7e-a080-680d32047d76",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "0900a894-1f3b-4214-8ea0-3324749c8775",
+    "name": "Admin can send more money than he has with overdraft feature",
+    "commands": [{
+      "id": "f95a65d2-7829-47e2-b93b-7f3f2dd1c891",
+      "comment": "",
+      "command": "open",
+      "target": "/reset.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d1171f98-2721-47ba-bafd-38c31b46317b",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "b6f62b23-5da4-4865-830b-706de6994856",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "adm1n"
+    }, {
+      "id": "93a9a4e9-88cf-4f72-9651-43fc37d9fbe9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-submit",
+      "targets": [
+        ["css=.login-submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign-in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0573aac4-8927-4c9d-a5d0-5a0b425d5e1f",
+      "comment": "",
+      "command": "click",
+      "target": "id=openTransactionModal",
+      "targets": [
+        ["id=openTransactionModal", "id"],
+        ["css=#admin-panel > #openTransactionModal", "css:finder"],
+        ["xpath=//button[@id='openTransactionModal']", "xpath:attributes"],
+        ["xpath=//div[@id='admin-panel']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Enable Experimental Mode')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "94033b57-41f4-4918-9292-7a96ade1c39e",
+      "comment": "",
+      "command": "click",
+      "target": "css=#experimental-overdraft-dialog .modal-text",
+      "targets": [
+        ["css=#experimental-overdraft-dialog .modal-text", "css:finder"],
+        ["xpath=//div[@id='experimental-overdraft-dialog']/div[2]/div/div/div/div[2]/p", "xpath:idRelative"],
+        ["xpath=//div[6]/div[2]/div/div/div/div[2]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'The experimental overdraft feature has been enabled!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3268fc61-975b-4381-87c3-e7cf18854198",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=#experimental-overdraft-dialog .modal-text",
+      "targets": [
+        ["css=#experimental-overdraft-dialog .modal-text", "css:finder"],
+        ["xpath=//div[@id='experimental-overdraft-dialog']/div[2]/div/div/div/div[2]/p", "xpath:idRelative"],
+        ["xpath=//div[6]/div[2]/div/div/div/div[2]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'The experimental overdraft feature has been enabled!')]", "xpath:innerText"]
+      ],
+      "value": "The experimental overdraft feature has been enabled!"
+    }, {
+      "id": "414db042-9301-4620-a590-caa6f975d035",
+      "comment": "",
+      "command": "click",
+      "target": "css=#experimental-overdraft-dialog .modal-button-close > .icon",
+      "targets": [
+        ["css=#experimental-overdraft-dialog .modal-button-close > .icon", "css:finder"],
+        ["xpath=(//img[@alt='Close'])[5]", "xpath:img"],
+        ["xpath=//div[@id='experimental-overdraft-dialog']/div[2]/div/div/button/img", "xpath:idRelative"],
+        ["xpath=//div[6]/div[2]/div/div/button/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9468e3cf-a7c9-4f2c-a134-89588a001090",
+      "comment": "",
+      "command": "click",
+      "target": "css=.account-section-transaction-create-4 > #openTransactionModal",
+      "targets": [
+        ["css=.account-section-transaction-create-4 > #openTransactionModal", "css:finder"],
+        ["xpath=(//button[@id='openTransactionModal'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='transaction-controls']/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'New Money Transfer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a5fdc656-8f2a-4c7d-b333-2caec8998dbf",
+      "comment": "",
+      "command": "select",
+      "target": "id=transaction-to",
+      "targets": [],
+      "value": "label=Offshore (Cayman Island)"
+    }, {
+      "id": "9d55ed76-ee9c-4c82-8278-192f2777aca3",
+      "comment": "",
+      "command": "click",
+      "target": "css=option:nth-child(2)",
+      "targets": [
+        ["css=option:nth-child(2)", "css:finder"],
+        ["xpath=//option[@value='cayman']", "xpath:attributes"],
+        ["xpath=//select[@id='transaction-to']/option[2]", "xpath:idRelative"],
+        ["xpath=//option[2]", "xpath:position"],
+        ["xpath=//option[contains(.,'Offshore (Cayman Island)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4205b804-1508-463e-b4c0-67be73c866e5",
+      "comment": "",
+      "command": "click",
+      "target": "id=transaction-value",
+      "targets": [
+        ["id=transaction-value", "id"],
+        ["name=amount", "name"],
+        ["css=#transaction-value", "css:finder"],
+        ["xpath=//input[@id='transaction-value']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "26a91583-209c-4b4d-9ec7-7a8fb089f8b9",
+      "comment": "",
+      "command": "click",
+      "target": "id=transaction-value",
+      "targets": [
+        ["id=transaction-value", "id"],
+        ["name=amount", "name"],
+        ["css=#transaction-value", "css:finder"],
+        ["xpath=//input[@id='transaction-value']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bedd4360-5437-4cfb-b207-01e6b1d45fce",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=transaction-value",
+      "targets": [
+        ["id=transaction-value", "id"],
+        ["name=amount", "name"],
+        ["css=#transaction-value", "css:finder"],
+        ["xpath=//input[@id='transaction-value']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee2006b4-1eb9-494d-8d8a-6f43dd86b026",
+      "comment": "",
+      "command": "type",
+      "target": "id=transaction-value",
+      "targets": [
+        ["id=transaction-value", "id"],
+        ["name=amount", "name"],
+        ["css=#transaction-value", "css:finder"],
+        ["xpath=//input[@id='transaction-value']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "10000.00"
+    }, {
+      "id": "84b3a211-83e3-4374-80b2-e15a9c25c1fe",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) > .modal-button-wrapper > .modal-button-transfer",
+      "targets": [
+        ["css=div:nth-child(3) > .modal-button-wrapper > .modal-button-transfer", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Transfer Money')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec31c2be-cd66-4bb2-a3ab-02656fdff445",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-bounding-box-header-text",
+      "targets": [
+        ["css=.login-bounding-box-header-text", "css:finder"],
+        ["xpath=//h2", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "185844b8-51fc-45cd-baff-7fa42cf212d5",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=p:nth-child(1)",
+      "targets": [
+        ["css=p:nth-child(1)", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'You successfully transferred')]", "xpath:innerText"]
+      ],
+      "value": "You successfully transferred"
+    }, {
+      "id": "3b4e4b81-fb11-4d42-baf4-a8f1733b4d17",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "6c01a37c-9cf3-4b22-9a15-7afafc2a9c27",
+    "name": "Admin can see red experimental button",
+    "commands": [{
+      "id": "e05e7e73-d12d-4488-a425-063e298366ba",
+      "comment": "",
+      "command": "open",
+      "target": "/reset.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ae2ce415-a2d4-46b3-b2d5-4203aeb3d328",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "238afe83-3632-4ff3-ac04-df26ddfb381a",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "adm1n"
+    }, {
+      "id": "dcde07c7-dfbe-4eaf-89a9-36d4b2873d22",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-submit",
+      "targets": [
+        ["css=.login-submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign-in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3da5f2c-cb98-45d7-9642-bb41ab9eb612",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=openTransactionModal",
+      "targets": [
+        ["id=openTransactionModal", "id"],
+        ["css=#admin-panel > #openTransactionModal", "css:finder"],
+        ["xpath=//button[@id='openTransactionModal']", "xpath:attributes"],
+        ["xpath=//div[@id='admin-panel']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Enable Experimental Mode')]", "xpath:innerText"]
+      ],
+      "value": "Enable Experimental Mode"
+    }, {
+      "id": "d0197bfc-74c6-4601-8486-8d697df98e85",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "6c042173-7d6d-4d27-96a3-5ab82b15173b",
+    "name": "Admin sees correct amount on success screen after sending money to offshore account",
+    "commands": [{
+      "id": "b014307c-c364-43ba-b7a8-e79cddf78ed5",
+      "comment": "",
+      "command": "open",
+      "target": "/reset.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9e0304b8-75e3-403c-b490-672bf07c0578",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "e6f2a6fb-4b52-49af-a863-6c8286c4cc5c",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "adm1n"
+    }, {
+      "id": "c9df7ca5-3e59-4ce7-a771-51dfcfefe42b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.login-submit",
+      "targets": [
+        ["css=.login-submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='authentication']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign-in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4768f51a-6d4c-4615-b360-46a93cdf0c18",
+      "comment": "",
+      "command": "click",
+      "target": "id=openTransactionModal",
+      "targets": [
+        ["id=openTransactionModal", "id"],
+        ["css=#admin-panel > #openTransactionModal", "css:finder"],
+        ["xpath=//button[@id='openTransactionModal']", "xpath:attributes"],
+        ["xpath=//div[@id='admin-panel']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Enable Experimental Mode')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "483d7620-a6cf-4701-8b68-ddf5363a6020",
+      "comment": "",
+      "command": "click",
+      "target": "css=#experimental-overdraft-dialog .modal-text",
+      "targets": [
+        ["css=#experimental-overdraft-dialog .modal-text", "css:finder"],
+        ["xpath=//div[@id='experimental-overdraft-dialog']/div[2]/div/div/div/div[2]/p", "xpath:idRelative"],
+        ["xpath=//div[6]/div[2]/div/div/div/div[2]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'The experimental overdraft feature has been enabled!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "87405cf1-1486-4732-8aba-6cee0d4e23d7",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=#experimental-overdraft-dialog .modal-text",
+      "targets": [
+        ["css=#experimental-overdraft-dialog .modal-text", "css:finder"],
+        ["xpath=//div[@id='experimental-overdraft-dialog']/div[2]/div/div/div/div[2]/p", "xpath:idRelative"],
+        ["xpath=//div[6]/div[2]/div/div/div/div[2]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'The experimental overdraft feature has been enabled!')]", "xpath:innerText"]
+      ],
+      "value": "The experimental overdraft feature has been enabled!"
+    }, {
+      "id": "1fccdccd-c7d6-481b-9469-8bc1a68eeab5",
+      "comment": "",
+      "command": "click",
+      "target": "css=#experimental-overdraft-dialog .modal-button-close > .icon",
+      "targets": [
+        ["css=#experimental-overdraft-dialog .modal-button-close > .icon", "css:finder"],
+        ["xpath=(//img[@alt='Close'])[5]", "xpath:img"],
+        ["xpath=//div[@id='experimental-overdraft-dialog']/div[2]/div/div/button/img", "xpath:idRelative"],
+        ["xpath=//div[6]/div[2]/div/div/button/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "160ddfba-6bbe-4f9a-b426-8fffad28aa57",
+      "comment": "",
+      "command": "click",
+      "target": "css=.account-section-transaction-create-4 > #openTransactionModal",
+      "targets": [
+        ["css=.account-section-transaction-create-4 > #openTransactionModal", "css:finder"],
+        ["xpath=(//button[@id='openTransactionModal'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='transaction-controls']/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'New Money Transfer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac36516d-dfa2-4750-8bc6-4ad5dd20acb1",
+      "comment": "",
+      "command": "select",
+      "target": "id=transaction-to",
+      "targets": [],
+      "value": "label=Offshore (Cayman Island)"
+    }, {
+      "id": "e8d4b69e-dc87-4c6f-bc82-74f52d198540",
+      "comment": "",
+      "command": "click",
+      "target": "css=option:nth-child(2)",
+      "targets": [
+        ["css=option:nth-child(2)", "css:finder"],
+        ["xpath=//option[@value='cayman']", "xpath:attributes"],
+        ["xpath=//select[@id='transaction-to']/option[2]", "xpath:idRelative"],
+        ["xpath=//option[2]", "xpath:position"],
+        ["xpath=//option[contains(.,'Offshore (Cayman Island)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d37c04a-654f-4561-84f3-4ffe209db376",
+      "comment": "",
+      "command": "click",
+      "target": "id=transaction-value",
+      "targets": [
+        ["id=transaction-value", "id"],
+        ["name=amount", "name"],
+        ["css=#transaction-value", "css:finder"],
+        ["xpath=//input[@id='transaction-value']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "95e2b560-0fb7-422d-b749-04bd80451cd3",
+      "comment": "",
+      "command": "click",
+      "target": "id=transaction-value",
+      "targets": [
+        ["id=transaction-value", "id"],
+        ["name=amount", "name"],
+        ["css=#transaction-value", "css:finder"],
+        ["xpath=//input[@id='transaction-value']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b78aa2d5-fbc6-4302-a605-729a2a7f0674",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=transaction-value",
+      "targets": [
+        ["id=transaction-value", "id"],
+        ["name=amount", "name"],
+        ["css=#transaction-value", "css:finder"],
+        ["xpath=//input[@id='transaction-value']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6489fd23-850e-47c0-b7be-ba9d4193b8df",
+      "comment": "",
+      "command": "type",
+      "target": "id=transaction-value",
+      "targets": [
+        ["id=transaction-value", "id"],
+        ["name=amount", "name"],
+        ["css=#transaction-value", "css:finder"],
+        ["xpath=//input[@id='transaction-value']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "10000.00"
+    }, {
+      "id": "e053f7a6-5a8d-4f9b-9ff4-0726ff94c15f",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) > .modal-button-wrapper > .modal-button-transfer",
+      "targets": [
+        ["css=div:nth-child(3) > .modal-button-wrapper > .modal-button-transfer", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='transaction']/div[2]/div/div/div[2]/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Transfer Money')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "09a65e49-d6fc-41a9-b5ec-d5ef4a280259",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=finalValue",
+      "targets": [
+        ["id=finalValue", "id"],
+        ["css=#finalValue", "css:finder"],
+        ["xpath=//p[@id='finalValue']", "xpath:attributes"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'10.010,00 €')]", "xpath:innerText"]
+      ],
+      "value": "10.000,00 €"
+    }, {
+      "id": "312b4cb6-0bd8-4d7c-b386-bd8aef8a4e3e",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [],
+  "urls": ["http://localhost/", "http://localhost/reset.html"],
+  "plugins": []
+}
