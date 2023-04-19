@@ -20,3 +20,7 @@ School coding day repo
 ```shell
 docker run -it --rm -v $PWD:/usr/share/nginx/html:ro -p 80:80 nginx
 ```
+
+## Bug fixing commits
+0d4422843bf3e122afd3c3a8631a992d9bfb53a4
+d38697fbc4776ca00cf784481e4841ba00dc04ff
