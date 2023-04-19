@@ -31,7 +31,7 @@
    ![img_8.png](img_8.png)  
    ![img_9.png](img_9.png)
 
-# (c) Professional
+# (c) Profi
 1. Admin sieht die korrekte Summe aller Transaktionen auf der Übersicht  
    ![img_10.png](img_10.png)
 2. Transaktionskategorien sind Singular, nicht Plural  
