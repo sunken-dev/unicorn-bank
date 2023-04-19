@@ -1,47 +1,62 @@
-# (a) Anfänger
-1. Login Schaltfläche ist klickbar  
+# (a) User Funktionalität
+## 1. Login Schaltfläche ist klickbar  
    ![img.png](img.png)
-2. TestUser kann sich anmelden  
+## 2. TestUser kann sich anmelden  
    Username: TestUser  
    Passwort: correct horse battery staple
-3. Falsche Login Daten zeigt Fehler mit Text an  
+## 3. Falsche Login Daten zeigt Fehler mit Text an  
    ![img_1.png](img_1.png)
-4. TestUser kann die Transaktion "Netflix" mit "-25,99" Euro sehen  
+
+<div style="page-break-after: always; break-after: page;"></div>
+
+## 4. TestUser kann die Transaktion "Netflix" mit "-25,99" Euro sehen  
    ![img_2.png](img_2.png)
-5. TestUser kann Geld überweisen und erhält eine Erfolgsmeldung  
+## 5. TestUser kann Geld überweisen und erhält eine Erfolgsmeldung  
    ![img_3.png](img_3.png)
-6. TestUser kann 100 Euro auf ein Testkonto überweisen und erhält 100 Euro zurück
-   Tipp: Es dauert 5 Sekunden bis das Geld zurück überwiesen wird, also kann er Test schon länger dauern beim ausführen
+## 6. TestUser kann 100 Euro auf ein Testkonto überweisen und erhält 100 Euro zurück
+   Tipp: Es dauert 5 Sekunden bis das Geld zurück überwiesen wird, also kann er Test schon länger dauern beim ausführen  
    ![img_4.png](img_4.png)
 
-# (b) Fortgeschritten
-1. Admin kann sich anmelden  
+<div style="page-break-after: always; break-after: page;"></div>
+
+# (b) Admin Funktionalität
+## 1. Admin kann sich anmelden  
    Username: admin  
    Passwort: adm1n
-2. Admin kann eine rote experimentelle Schaltfläche sehen  
+## 2. Admin kann eine rote experimentelle Schaltfläche sehen  
    ![img_5.png](img_5.png)
-3. TestUser sollte die rote experimentelle Schaltfläche nicht sehen  
+## 3. TestUser sollte die rote experimentelle Schaltfläche nicht sehen  
    Jene rote Schaltfläche die der Admin ganz oben auf der Übersichtseite aller Transaktionen hat, sollte beim TestUser nicht sichtbar sein
-4. Admin kann Geld auf ein Offshore-Konto überweisen (Betrag ist hier egal) 
+
+<div style="page-break-after: always; break-after: page;"></div>
+
+## 4. Admin kann Geld auf ein Offshore-Konto überweisen (Betrag ist hier egal)  
    ![img_6.png](img_6.png)
-5. Admin sieht den korrekten Betrag auf dem Erfolgsbildschirm, nachdem er Geld auf das Offshore-Konto überwiesen hat  
+
+<div style="page-break-after: always; break-after: page;"></div>
+
+## 5. Admin sieht den korrekten Betrag auf dem Erfolgsbildschirm, nachdem er Geld auf das Offshore-Konto überwiesen hat  
    ![img_7.png](img_7.png)
-6. Admin kann mit der Überbeziehungsfunktion mehr Geld senden als er hat  
+## 6. Admin kann mit der Überbeziehungsfunktion mehr Geld senden als er hat  
    Dazu muss er den experimentellen Modus aktivieren und danach mehr Geld senden als er hat  
    ![img_8.png](img_8.png)  
    ![img_9.png](img_9.png)
 
-# (c) Profi
-1. Admin sieht die korrekte Summe aller Transaktionen auf der Übersicht  
+<div style="page-break-after: always; break-after: page;"></div>
+
+# (c) Kontoübersicht
+## 1. Admin sieht die korrekte Summe aller Transaktionen auf der Übersicht  
    ![img_10.png](img_10.png)
-2. Transaktionskategorien sind Singular, nicht Plural  
+## 2. Transaktionskategorien sind Singular, nicht Plural  
    ![img_11.png](img_11.png)  
    Income, Food und Health
-3. Das Unicorn Bank Logo wird links oben als Bild mit einem Pferd angezeigt  
+## 3. Das Unicorn Bank Logo wird links oben als Bild mit einem Pferd angezeigt  
    ![img_12.png](img_12.png)
 
-# (d) Experte
-1. Admin sollte eine Gebühr von 10 Euro für Offshore-Überweisungen zahlen
+<div style="page-break-after: always; break-after: page;"></div>
+
+# (d) Neue Funktionalität
+## 1. Admin sollte eine Gebühr von 10 Euro für Offshore-Überweisungen zahlen
 - Ändern Sie die Funktionalität, um den gesendeten Betrag an das Offshore-Konto um 10 Euro zu reduzieren.
 - Passen Sie danach die Tests so an um das neue Verhalten wiederspiegeln, also nach dem senden auf ein Offshore Konto sollte der gesendete Betrag um 10 Euro weniger sein als der vom Admin eingetragene Betrag
 - Beispiel

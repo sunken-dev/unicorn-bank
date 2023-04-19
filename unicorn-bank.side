@@ -1529,21 +1529,21 @@
   }],
   "suites": [{
     "id": "ae6691a3-19b6-4a40-8a6e-47a6cae6d972",
-    "name": "Anfänger",
+    "name": "User Funktionalität",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
     "tests": ["d7d19be8-015c-4c35-b73b-1c39eb7ec528", "038a68d5-e54a-40b7-aa0a-2cd88da530ed", "3634cdff-7a8d-41a4-958a-ad893117d3c8", "702345cc-8748-4013-a3f4-b2af2a2008fa", "f608f988-c931-4761-800b-619cbea07fee", "ad0bc4ea-a45e-4fc2-affd-ca3a192744c6"]
   }, {
     "id": "b0e71a47-e72e-4eef-9c73-a52f58ae6c7e",
-    "name": "Fortgeschritten",
+    "name": "Admin Funktionalität",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
     "tests": ["8b30c3f6-7d6a-495a-9472-2c84dd8419b4", "6c01a37c-9cf3-4b22-9a15-7afafc2a9c27", "1d0d155d-2346-4f7f-b81f-c614cbea763d", "3bfb1050-1117-4368-a39a-96e472387ad6", "6c042173-7d6d-4d27-96a3-5ab82b15173b", "0900a894-1f3b-4214-8ea0-3324749c8775"]
   }, {
     "id": "b3b9756a-7e51-4770-b52b-8a4f903ce792",
-    "name": "Profi",
+    "name": "Kontoübersicht",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
