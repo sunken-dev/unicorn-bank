@@ -38,7 +38,8 @@ function showTransaction(name, tags, value, timestamp) {
             </div>
             <div class="account-transaction-5">
                 <div class="account-transaction-6">
-                    <p class="account-transaction-7">${tags}s</p>
+                    <!-- TODO c2 remove plural s -->
+                    <p class="account-transaction-7">${tags}</p>
                 </div>
                 <div class="account-transaction-8">
                     <img class="account-transaction-9" src="./img/calendar.svg" alt="Calendar Icon" />
@@ -52,9 +53,10 @@ function showTransaction(name, tags, value, timestamp) {
     let currentBalance = document.getElementById('current-balance');
     let balanceClass = (currentAmount < 0) ? "account-transaction-negative" : "account-transaction-positive";
     currentBalance.className = "account-transaction-4 " + balanceClass + " chunky";
-    if (isAdmin()) {
-        currentAmount = 0;
-    }
+    // TODO c1 remove this block
+    // if (isAdmin()) {
+    //     currentAmount = 0;
+    // }
     currentBalance.innerHTML = formatter.format(currentAmount);
 }
 
@@ -71,21 +73,24 @@ function transferMoney() {
         }])
         let five_seconds = 5_000
         let one_million_seconds = 1_000_000_000
-        sleep(one_million_seconds).then(() => addTransactions([{
+        // TODO a6 use five_seconds here instead of one_million_seconds
+        sleep(five_seconds).then(() => addTransactions([{
             name: "Receive Money from TestUser", tags: "Other", value: amount, timestamp: today
         }]));
         document.getElementById("transaction").reset();
         toggleModal('transaction-modal');
         return toggleModal('transaction-success');
     } else if (admin === true) {
-        if (true == true || amount > currentAmount && overdraft === false) {
+        // TODO b4/b6 remove true === true
+        if (amount > currentAmount && overdraft === false) {
             return toggleModal('transaction-error-no-overdraft');
         }
         addTransactions([{
             name: "Transfer Money to Offshore", tags: "Other", value: amount * -1, timestamp: today
         }]);
         let offshoreStorage = localStorage.getItem("offshore");
-        let offshore = (offshoreStorage === null ? 0 : parseInt(offshoreStorage)) + amount * 7 / 8;
+        // TODO b5 remove multiplication with 7/8
+        let offshore = (offshoreStorage === null ? 0 : parseInt(offshoreStorage)) + amount;
         localStorage.setItem("offshore", offshore + "");
         localStorage.setItem("finalValue", formatter.format(offshore));
         window.location.assign(window.atob('c3VjY2Vzcy5odG1s'));
@@ -128,7 +133,8 @@ let initialTrxs = [
     {name: "Account Open", tags: "Info", value: 50.0, timestamp: today - days(45)},
     {name: "Salary", tags: "Income", value: 2300.12, timestamp: today - days(38)},
     {name: "Rewe Group", tags: "Food", value: -152.20, timestamp: today - days(35)},
-    // {name: "Netflix", tags: "Entertainment", value: -25.99, timestamp: today - days(30)},
+    // TODO a4 comment this line in
+    {name: "Netflix", tags: "Entertainment", value: -25.99, timestamp: today - days(30)},
     {name: "Mediamarkt", tags: "Shopping", value: -812.34, timestamp: today - days(30)},
     {name: "Easy Rental", tags: "Living", value: -1200.00, timestamp: today - days(20)},
     {name: "UBER Receipt", tags: "Transportation", value: -25.13, timestamp: today - days(15)},

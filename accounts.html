@@ -15,29 +15,29 @@
     <div id="transaction-controls" class="account-section-transaction-header">
         <div class="account-section-transaction-create-1">
             <div class="account-section-transaction-create-2">
-                <img class="logo-small" src="./img/unicorns-logo.svg" alt="Unicorn Bank Logo" />
+                <!-- TODO c3 remove s from src to unicorn-logo.svg-->
+                <img class="logo-small" src="./img/unicorn-logo.svg" alt="Unicorn Bank Logo" />
                 <h3 class="logo-text">Welcome to Unicorn Bank</h3>
             </div>
             <div id="admin-panel" class="account-section-transaction-admin-1" hidden>
+                <!-- TODO b4 fix typo in onClick and remove disabled -->
                 <button type="button"
                         class="account-section-transaction-admin-1-btn"
-                        onclick="eenableExperimentalMode()"
+                        onclick="enableExperimentalMode()"
                         id="openTransactionModal"
-                        disabled
                 >
                     Enable Experimental Mode
                 </button>
             </div>
-<!-- TODO will fix this later -->
-
-<!--            <div class="account-section-transaction-create-4">-->
-<!--                <button type="button"-->
-<!--                        class="account-section-transaction-create-4-btn"-->
-<!--                        onclick="toggleModal('transaction-modal')"-->
-<!--                        id="openTransactionModal">-->
-<!--                    New Money Transfer-->
-<!--                </button>-->
-<!--            </div>-->
+            <!-- TODO a5 comment in this code block-->
+            <div class="account-section-transaction-create-4">
+                <button type="button"
+                        class="account-section-transaction-create-4-btn"
+                        onclick="toggleModal('transaction-modal')"
+                        id="openTransactionModal">
+                    New Money Transfer
+                </button>
+            </div>
         </div>
     </div>
 
@@ -246,7 +246,8 @@
 </div>
 
 <script>
-    if(isAdmin() === false) {
+    // TODO b2 and b3 remove === false, as currently the user sees the red button and admin does not
+    if(isAdmin()) {
         document.getElementById("admin-panel").removeAttribute("hidden");
     }
 </script>
