@@ -6,34 +6,54 @@
 @font-face {
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 400 700;
     font-display: swap;
-    src: url('../fonts/inter-ext.woff') format('woff');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    src: url('../fonts/inter-var-latin-ext.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* latin */
 @font-face {
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 400 700;
     font-display: swap;
-    src: url('../fonts/inter.woff') format('woff');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    src: url('../fonts/inter-var-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pop-in {
+    from { opacity: 0; transform: translateY(0.5rem) scale(0.97); }
+    to { opacity: 1; transform: none; }
+}
 
 * {
     font-family: "Inter", sans-serif;
 }
 
+:focus-visible {
+    @apply outline-none ring-2 ring-indigo-500 ring-offset-2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 .background {
-    @apply bg-cover bg-center h-screen w-screen;
+    @apply bg-cover bg-center bg-fixed min-h-screen antialiased;
     background-image: url(../img/background.png);
 }
 
 .login-bounding-box-centered {
-    @apply flex min-h-full flex-col justify-center pb-24 sm:px-6 lg:px-8;
+    @apply flex min-h-screen flex-col justify-center px-4 py-8 pb-16 sm:px-6 lg:px-8;
 }
 
 .login-bounding-box-header {
@@ -41,11 +61,11 @@
 }
 
 .login-bounding-box-header-logo {
-    @apply mx-auto;
+    @apply mx-auto h-32 w-32;
 }
 
 .login-bounding-box-header-text {
-    @apply mt-6 text-center text-3xl font-bold tracking-tight text-gray-900;
+    @apply mt-6 text-center text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl;
 }
 
 .login-bounding-box-header-text p {
@@ -53,7 +73,7 @@
 }
 
 .login-content {
-    @apply mt-8 sm:mx-auto sm:w-full sm:max-w-md bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 bg-opacity-75;
+    @apply mt-8 w-full sm:mx-auto sm:max-w-md rounded-2xl bg-white/80 py-8 px-6 shadow-xl ring-1 ring-white/60 backdrop-blur-md sm:px-10;
 }
 
 .login-form {
@@ -65,11 +85,11 @@
 }
 
 .login-input-control {
-    @apply block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm sm:text-sm;
+    @apply block w-full appearance-none rounded-lg border border-gray-300 bg-white px-3 py-2.5 placeholder-gray-400 shadow-sm transition sm:text-sm;
 }
 
 .login-input-control:focus {
-    @apply border-indigo-500 outline-none ring-indigo-500;
+    @apply border-indigo-500 outline-none ring-2 ring-indigo-500/30 ring-offset-0;
 }
 
 .login-input-grouping {
@@ -77,7 +97,7 @@
 }
 
 .login-submit {
-    @apply flex w-full justify-center rounded-md border border-transparent bg-indigo-800 py-2 px-4 text-sm font-medium text-white shadow-sm;
+    @apply flex w-full justify-center rounded-lg border border-transparent bg-indigo-700 py-2.5 px-4 text-sm font-semibold text-white shadow-sm transition;
 }
 
 .login-submit:disabled {
@@ -89,8 +109,16 @@
     content: " (disabled)";
 }
 
-.login-submit:focus {
-    @apply focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+.login-submit:enabled:active {
+    @apply bg-indigo-800;
+}
+
+.login-submit.margin {
+    @apply mb-3;
+}
+
+.login-submit.margin + .login-submit:enabled {
+    @apply border-gray-300 bg-white text-gray-700 hover:bg-gray-50;
 }
 
 .login-submit:enabled:hover {
@@ -98,19 +126,19 @@
 }
 
 .account-bounding-box {
-    @apply flex min-h-full flex-col gap-y-8;
+    @apply flex min-h-screen flex-col gap-y-8;
 }
 
 .account-section-transaction-header {
-    @apply border-b border-gray-200 bg-white bg-opacity-80 px-4 py-5 sm:px-6;
+    @apply sticky top-0 z-[5] border-b border-gray-200 bg-white/80 px-4 py-3 shadow-sm backdrop-blur-md sm:px-6 lg:px-8;
 }
 
 .account-section-transaction-create-1 {
-    @apply ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap;
+    @apply mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-3;
 }
 
 .account-section-transaction-create-2 {
-    @apply ml-4 mt-2 text-lg font-medium leading-6 text-gray-900;
+    @apply flex min-w-0 items-center gap-3 text-lg font-medium leading-6 text-gray-900;
 }
 
 .account-section-transaction-create-3 {
@@ -118,20 +146,17 @@
 }
 
 .account-section-transaction-create-4 {
-    @apply ml-4 mt-2 flex-shrink-0;
+    @apply flex-shrink-0;
 }
 
 .account-section-transaction-create-4-btn {
-    @apply relative inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm;
+    @apply relative inline-flex items-center rounded-lg border border-transparent bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition;
 }
 
 .account-section-transaction-create-4-btn:hover {
     @apply hover:bg-indigo-700;
 }
 
-.account-section-transaction-create-4-btn:focus {
-    @apply outline-none ring-2 ring-indigo-500 ring-offset-2;
-}
 
 .account-footer {
     @apply mx-4 flex flex-wrap items-center justify-between sm:flex-nowrap bg-gray-300 bg-opacity-50;
@@ -146,15 +171,15 @@
 }
 
 .account-section-transactions {
-    @apply pb-24 sm:px-6 lg:px-8;
+    @apply px-4 pb-16 sm:px-6 lg:px-8;
 }
 
 .account-section-transactions-box {
-    @apply flex min-h-full flex-col justify-center px-80;
+    @apply mx-auto w-full max-w-3xl;
 }
 
 .account-section-transactions-list {
-    @apply overflow-hidden bg-white shadow sm:rounded-md;
+    @apply overflow-hidden rounded-2xl bg-white/90 shadow-xl ring-1 ring-black/5 backdrop-blur-md;
 }
 
 .account-section-transactions-list-ul {
@@ -178,7 +203,7 @@
 }
 
 .account-transaction-1 {
-    @apply px-4 py-2 sm:px-6;
+    @apply px-4 py-3 transition-colors hover:bg-gray-50 sm:px-6;
 }
 
 .account-transaction-2 {
@@ -186,7 +211,7 @@
 }
 
 .account-transaction-3 {
-    @apply text-sm font-medium text-indigo-600 px-0;
+    @apply px-0 text-sm font-semibold text-gray-900;
 }
 
 .account-transaction-current-balance {
@@ -194,7 +219,7 @@
 }
 
 .account-transaction-4 {
-    @apply inline-flex rounded-full px-2 text-xs font-semibold leading-5;
+    @apply inline-flex rounded-full px-2.5 text-xs font-semibold leading-5 tabular-nums;
 }
 
 .account-transaction-5 {
@@ -206,7 +231,7 @@
 }
 
 .account-transaction-7 {
-    @apply flex items-center text-sm text-gray-500 bg-gray-100 border-gray-900 border border-dotted rounded-md px-2;
+    @apply flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600;
 }
 
 .account-transaction-8 {
@@ -278,7 +303,8 @@
 }
 
 .modal-backdrop {
-    @apply fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity;
+    @apply fixed inset-0 bg-gray-900/50 backdrop-blur-sm;
+    animation: fade-in 150ms ease-out;
 }
 
 .modal-screen {
@@ -290,11 +316,12 @@
 }
 
 .modal-box {
-    @apply relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6;
+    @apply relative transform overflow-hidden rounded-2xl bg-white px-4 pt-5 pb-4 text-left shadow-2xl sm:my-8 sm:w-full sm:max-w-sm sm:p-6;
+    animation: pop-in 180ms ease-out;
 }
 
 .modal-button {
-    @apply inline-flex w-full justify-center rounded-md border border-transparent px-4 py-2 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-sm;
+    @apply inline-flex w-full justify-center rounded-lg border border-transparent px-4 py-2.5 text-base font-semibold shadow-sm transition focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-sm;
 }
 
 .modal-button-error {
@@ -314,7 +341,7 @@
 }
 
 .modal-title {
-    @apply text-lg font-medium leading-6 text-gray-900;
+    @apply text-lg font-semibold leading-6 text-gray-900;
 }
 
 .modal-text {
@@ -338,7 +365,7 @@
 }
 
 .modal-button-close {
-    @apply absolute top-0 right-0 pt-4 pr-4 rounded-md bg-white text-gray-400;
+    @apply absolute top-3 right-3 rounded-md bg-white p-1 text-gray-400 transition-colors;
 }
 
 .modal-button-close:hover > img {
@@ -355,19 +382,35 @@
 }
 
 .logo-small {
-    @apply h-12 w-12 inline;
+    @apply h-10 w-10 flex-shrink-0;
 }
 
 .logo-text {
-    @apply font-black text-2xl align-middle leading-6 text-gray-900 inline;
+    @apply text-lg font-semibold leading-tight tracking-tight text-gray-900 sm:text-xl;
 }
 
 .chunky {
-    @apply font-black text-2xl;
+    @apply text-2xl font-bold;
+}
+
+.account-transaction-current-balance.chunky {
+    @apply text-base font-semibold uppercase tracking-wide text-gray-500;
+}
+
+#current-balance {
+    @apply px-3 py-0.5 text-xl leading-8;
 }
 
 #finalValue {
-    @apply text-indigo-600;
+    @apply text-5xl font-bold tabular-nums text-indigo-600;
+}
+
+select.account-input-control {
+    @apply pr-9 text-center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%236b7280' stroke-width='1.5'%3E%3Cpath d='m6 8 4 4 4-4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-position: right 0.6rem center;
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
 }
 
 .margin {
