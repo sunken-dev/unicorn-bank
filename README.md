@@ -1,16 +1,31 @@
-# Coding Day
+# Unicorn Bank
 
-School coding day repo
+![Unicorn Bank](img/og-image.png)
 
-## TODO:
-* [ ] make modal (mode) for transaction
-* [ ] make hidden field for sender of tx if isAdmin == true (shows ceo, self, other account)
-* [ ] make success message if tx from ceo to self was submitted
-* [ ] make log output of tx + hint that it must not be deleted
-* [ ] make js function to clearTraces + 2nd success ms
+A deliberately insecure mock online bank for hands-on web security training. Built for a school coding day.
 
-<!-- enable login page (enable button) -->
-<!-- login as user (find password in javascript/source code) -->
-<!-- change to admin (query param or javascript state) -->
-<!-- transfer funds - find the javascript code, which returns the TAN -->
-<!-- delete traces/logs - do this via the console, there is a function for delete logs -->
+Sign in, find the flaws, and move the money to the offshore account. No real bank, no real money.
+
+**Play it:** https://unicorn-bank.sunken.dev
+
+## Run locally
+
+It is a static site with no build step. Serve the folder with any web server:
+
+```sh
+python3 -m http.server 8000
+```
+
+Then open http://localhost:8000.
+
+## Reset
+
+Open `reset.html` to clear the game state and start over.
+
+## Stack
+
+Plain HTML and vanilla JavaScript, with Tailwind CSS prebuilt into `css/unicorn.css`. The `css/Dockerfile` rebuilds the stylesheet.
+
+## Note
+
+The security flaws are intentional. Please don't report them as bugs, and don't reuse this code in a real application.
